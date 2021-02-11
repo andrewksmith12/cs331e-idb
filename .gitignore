@@ -1,0 +1,8 @@
+# ignores virtual enviorment
+venv
+
+# ignores vscode settings
+.vscode
+
+# ignores mac files
+.DS_Store
