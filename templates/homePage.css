@@ -1,0 +1,30 @@
+
+
+.carousel img {
+  width: 72vw;
+  max-width:72vw;
+  height: 45vw;
+  max-height: 45vw;
+}
+
+.carousel {
+  width: 72vw;
+  max-width:72vw;
+  height: 45vw;
+  max-height: 45vw;
+  margin:auto;
+  margin-top: 2em;
+}
+
+.cards{
+	margin-top:1.5em;
+}
+
+.nav{
+  width: 72vw;
+  max-width:72vw;
+  margin:auto;
+  margin-top: 2em;
+}
+
+	
