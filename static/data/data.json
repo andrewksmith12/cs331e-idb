@@ -18,6 +18,23 @@
             ]
         }
     ],
-    "genres": [],
-    "venues": []
+    "genres": [
+        {
+            "name": "Hip-hop",
+            "id": 0
+        },
+        {
+            "name": "Classical",
+            "id": 1
+        },
+        {
+            "name": "Country",
+            "id": 2
+        },
+        {
+            "name": "Jazz",
+            "id": 3
+        }
+    ],
+    "songs": []
 }
