@@ -71,26 +71,24 @@
 <!-- Main Infobox -->
 <div class="row">
 	<div class="col-lg-8">
-        <h3>Brockhampton</h3>
+        <h3>{{artistData.name}}</h3>
 		<img src="/static/img/brockhampton.jpg" class="img-fluid" alt="pic of artist/genre/music">
         <p class="font-italic">
-			Brockhampton is an American alternative hip hop group founded as AliveSinceForever in San Marcos, Texas, United States, in 2010. In 2014, the band rebranded as Brockhampton. Led by Kevin Abstract and formed partially through the online forum "KanyeToThe", Brockhampton is a self-described boy band, so-called in an effort to redefine the term. Complex magazine describes the group as "gay, black, white, DIY, ambitious, all-inclusive, and would-be pop stars," and this diversity is what largely distinguishes their lyrics and sound. The group consists of vocalists Kevin Abstract, Matt Champion, Merlyn Wood, and Dom McLennon, vocalists/producers Joba, Bearface and Jabari Manwa and producers Romil Hemnani and Kiko Merley, as well as graphic designer Henock "HK" Sileshi, photographer Ashlan Grey, web designer Roberto Ontenient (who also features prominently in voice skits), and manager Jon Nunes. 			
+			{{artistData.description}}			
         </p>
 		<h5>Discography</h5>
 		<ul>
-			<li>Ginger</li>
-			<li>Irridescence</li>
-			<li>Saturation III</li>
+            {% for item in artistData.discography %}
+			<li>{{item}}</li>
+            {% endfor %}
 		</ul>
     </div>
 	<div class="col-lg-4">
 		<h3>Related Music and Artists</h3>
 		<ul>
-			<li>Domo Genesis</li>
-			<li>Kenny Beats</li>
-			<li>Youth of the Apocolypse</li>
-			<li>Lou the Human</li>
-			<li>Shoreline Mafia</li>
+            {% for item in artistData.related %}
+			<li>{{item}}</li>
+            {% endfor %}
 		</ul>
 	</div>
      

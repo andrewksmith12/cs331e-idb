@@ -1,6 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for, jsonify, json
 import random
+import os
 app = Flask(__name__)
+
+datafile = os.path.join(app.static_folder, 'data', 'data.json')
+data = json.load(open(datafile))
+artists = data["artists"]
 
 
 @app.route('/')
@@ -21,9 +26,9 @@ def addBand():
         return render_template('addBand.html')
 
 
-@app.route('/artistPage/', methods=['GET'])
-def artist():
-    return render_template('artistPage.html')
+@app.route('/artist/<int:id>', methods=['GET'])
+def artist(id):
+    return render_template('artistPage.html', artistData=artists[id])
 
 
 if __name__ == '__main__':
