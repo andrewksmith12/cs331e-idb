@@ -47,11 +47,9 @@
           </a>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Hip-Hop</a></li>
-            <li><a class="dropdown-item" href="#">Classical</a></li>
-            <li><a class="dropdown-item" href="#">Country</a></li>
-            <li><a class="dropdown-item" href="#">Jazz</a></li>
-
+            {% for genre in genreIndex %}
+            <li><a class="dropdown-item" href="{{url_for('genre',id=genre.id)}}">{{genre.name}}</a></li>
+            {% endfor %}
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Browse All</a></li>
           </ul>
