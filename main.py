@@ -6,11 +6,17 @@ app = Flask(__name__)
 datafile = os.path.join(app.static_folder, 'data', 'data.json')
 data = json.load(open(datafile))
 artists = data["artists"]
+genres = data["genres"]
+songs = data["songs"]
+
+genreIndex = [None]*len(genres)
+for thisGenre in genres:
+    genreIndex[int(thisGenre["id"])] = thisGenre
 
 
 @app.route('/')
 def index():
-    return render_template('splash.html')
+    return render_template('splash.html', genreIndex=genreIndex)
 
 
 # Example page for adding to a 'Bands' list, that lets you search bands
@@ -28,7 +34,17 @@ def addBand():
 
 @app.route('/artist/<int:id>', methods=['GET'])
 def artist(id):
-    return render_template('artistPage.html', artistData=artists[id])
+    return render_template('artistPage.html', artistData=artists[id], genreIndex=genreIndex)
+
+
+@app.route('/genre/<int:id>', methods=['GET'])
+def genre(id):
+    return render_template('genrePage.html', genreData=genres[id], genreIndex=genreIndex)
+
+
+@app.route('/song/<int:id>', methods=['GET'])
+def song(id):
+    return render_template('songPage.html', songData=songs[id], genreIndex=genreIndex)
 
 
 if __name__ == '__main__':
