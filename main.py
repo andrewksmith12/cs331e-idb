@@ -23,7 +23,7 @@ def getArtistAlbums(albumList):
 
 @app.route('/')
 def index():
-    return render_template('splash.html')
+    return render_template('splash.html', genreIndex=genreIndex)
 
 
 # Example page for adding to a 'Bands' list, that lets you search bands
@@ -48,12 +48,12 @@ def artist(id):
 
 @app.route('/genre/<int:id>', methods=['GET'])
 def genre(id):
-    return render_template('genrePage.html', genreIndex=genreIndex)
+    return render_template('genrePage.html', genreData=genres[id], genreIndex=genreIndex)
 
 
-@app.route('/album/<int:id>', methods=['GET'])
+@app.route('/song/<int:id>', methods=['GET'])
 def song(id):
-    return render_template('songPage.html', genreIndex=genreIndex)
+    return render_template('songPage.html', songData=songs[id], genreIndex=genreIndex)
 
 
 if __name__ == '__main__':
