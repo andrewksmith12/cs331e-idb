@@ -35,10 +35,6 @@
             "description": "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. Her narrative songwriting, which often takes inspiration from her personal life, has received widespread critical praise and media coverage."
         }
     ],
-<<<<<<< Updated upstream
-    "genres": [],
-    "venues": []
-=======
     "genres": [
         {
             "name": "Hip-hop",
@@ -123,5 +119,8 @@
             ]
         }
     ]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
