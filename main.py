@@ -6,6 +6,22 @@ app = Flask(__name__)
 datafile = os.path.join(app.static_folder, 'data', 'data.json')
 data = json.load(open(datafile))
 artists = data["artists"]
+<<<<<<< Updated upstream
+=======
+genres = data["genres"]
+albums = data["albums"]
+
+genreIndex = [None]*len(genres)
+for thisGenre in genres:
+    genreIndex[int(thisGenre["id"])] = thisGenre
+>>>>>>> Stashed changes
+
+
+def getArtistAlbums(albumList):
+    artistAlbums = [None]*len(albumList)
+    for i, albumID in enumerate(albumList):
+        artistAlbums[i] = albums[albumID]
+    return artistAlbums
 
 
 @app.route('/')
@@ -28,7 +44,23 @@ def addBand():
 
 @app.route('/artist/<int:id>', methods=['GET'])
 def artist(id):
+<<<<<<< Updated upstream
     return render_template('artistPage.html', artistData=artists[id])
+=======
+    artistData = artists[int(id)]
+    artistAlbums = getArtistAlbums(artistData["albums"])
+    return render_template('artistPage.html', artistData=artistData, artistAlbums=artistAlbums, genreIndex=genreIndex)
+
+
+@app.route('/genre/<int:id>', methods=['GET'])
+def genre(id):
+    return render_template('genrePage.html', genreIndex=genreIndex)
+
+
+@app.route('/album/<int:id>', methods=['GET'])
+def song(id):
+    return render_template('songPage.html', genreIndex=genreIndex)
+>>>>>>> Stashed changes
 
 
 if __name__ == '__main__':

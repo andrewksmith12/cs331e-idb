@@ -78,8 +78,8 @@
         </p>
 		<h5>Discography</h5>
 		<ul>
-            {% for item in artistData.discography %}
-			<li>{{item}}</li>
+            {% for item in artistAlbums %}
+			<li>{{item.name}}</li>
             {% endfor %}
 		</ul>
     </div>
