@@ -1,40 +1,89 @@
 {
-    "artists": [
-        {
-            "name": "Brockhampton",
-            "id": 0,
-            "description": "Brockhampton is an American alternative hip hop group founded as AliveSinceForever in San Marcos, Texas, United States, in 2010. In 2014, the band rebranded as Brockhampton. Led by Kevin Abstract and formed partially through the online forum \"KanyeToThe\", Brockhampton is a self-described boy band, so-called in an effort to redefine the term. Complex magazine describes the group as \"gay, black, white, DIY, ambitious, all-inclusive, and would-be pop stars,\" and this diversity is what largely distinguishes their lyrics and sound. The group consists of vocalists Kevin Abstract, Matt Champion, Merlyn Wood, and Dom McLennon, vocalists/producers Joba, Bearface and Jabari Manwa and producers Romil Hemnani and Kiko Merley, as well as graphic designer Henock \"HK\" Sileshi, photographer Ashlan Grey, web designer Roberto Ontenient(who also features prominently in voice skits), and manager Jon Nunes.",
-            "discography": [
-                "Ginger",
-                "Iridescence",
-                "Saturation III"
-            ],
-            "related": [
-                "Domo Genesis",
-                "Kenny Beats",
-                "Youth of the Apocalypse",
-                "Lou the Human",
-                "Shoreline Mafia"
-            ]
-        }
-    ],
-    "genres": [
-        {
-            "name": "Hip-hop",
-            "id": 0
-        },
-        {
-            "name": "Classical",
-            "id": 1
-        },
-        {
-            "name": "Country",
-            "id": 2
-        },
-        {
-            "name": "Jazz",
-            "id": 3
-        }
-    ],
-    "songs": []
+    "artists": [{
+        "name": "Brockhampton",
+        "id": 0,
+        "genres": [0],
+        "albums": [0, 1, 2],
+        "image": "brockhampton.jpg",
+        "related": ["Domo Genesis", "Kenny Beats", "Youth of the Apocalypse", "Lou the Human", "Shoreline Mafia"],
+        "description": "Brockhampton is an American alternative hip hop group founded as AliveSinceForever in San Marcos, Texas, United States, in 2010. In 2014, the band rebranded as Brockhampton. Led by Kevin Abstract and formed partially through the online forum \"KanyeToThe\", Brockhampton is a self-described boy band, so-called in an effort to redefine the term. Complex magazine describes the group as \"gay, black, white, DIY, ambitious, all-inclusive, and would-be pop stars,\" and this diversity is what largely distinguishes their lyrics and sound. The group consists of vocalists Kevin Abstract, Matt Champion, Merlyn Wood, and Dom McLennon, vocalists/producers Joba, Bearface and Jabari Manwa and producers Romil Hemnani and Kiko Merley, as well as graphic designer Henock \"HK\" Sileshi, photographer Ashlan Grey, web designer Roberto Ontenient(who also features prominently in voice skits), and manager Jon Nunes."
+    }, {
+        "name": "Taylor Swift",
+        "id": 1,
+        "genres": [2],
+        "albums": [3, 4, 5],
+        "related": "",
+        "description": "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. Her narrative songwriting, which often takes inspiration from her personal life, has received widespread critical praise and media coverage."
+    }],
+    "genres": [{
+        "name": "Hip-hop",
+        "id": 0
+    }, {
+        "name": "Classic Rock",
+        "id": 1
+    }, {
+        "name": "Country",
+        "id": 2
+    }, {
+        "name": "Jazz",
+        "id": 3
+    }, {
+        "name": "Alternative",
+        "id": 4
+    }],
+    "albums": [{
+        "name": "Ginger",
+        "albumID": 0,
+        "genres": [
+            0
+        ],
+        "artistID": [
+            0
+        ]
+    }, {
+        "name": "Iridescence",
+        "albumID": 1,
+        "genreID": [
+            0
+        ],
+        "artistID": [
+            0
+        ]
+    }, {
+        "name": "Saturation III",
+        "albumID": 2,
+        "genreID": [
+            0
+        ],
+        "artistID": [
+            0
+        ]
+    }, {
+        "name": "Taylor Swift",
+        "albumID": 3,
+        "genreID": [
+            2
+        ],
+        "artistID": [
+            1
+        ]
+    }, {
+        "name": "Red",
+        "albumID": 4,
+        "genreID": [
+            2
+        ],
+        "artistID": [
+            1
+        ]
+    }, {
+        "name": "Folklore",
+        "albumID": 5,
+        "genreID": [
+            4
+        ],
+        "artistID": [
+            1
+        ]
+    }]
 }
