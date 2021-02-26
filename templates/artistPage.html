@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Artist Page</title>
+    <title>Brockhampton</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!-- Favicons -->
@@ -21,30 +21,35 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Music For You</a>
+            <a class="navbar-brand" href="./splash.html">Music For You</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Browse Music</a>
-                    </li>
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Genres </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Genres
+                        </a>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% for genre in genreIndex %}
-                            <li><a class="dropdown-item" href="{{url_for('genre',id=genre.id)}}">{{genre.name}}</a>
-                            </li> {% endfor %}
+                            <li><a class="dropdown-item" href="{{url_for('genre',id=genre.id)}}">{{genre.name}}</a></li>
+                            {% endfor %}
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="#">Browse All</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
@@ -56,19 +61,36 @@
     <!-- Navbar End -->
     <!-- Main Infobox -->
     <div class="row">
-        <div class="col-lg-8">
-            <h3>{{artistData.name}}</h3>
-            <img src="/static/img/{{artistData.image}}" class="img-fluid" alt="photo of {{artistData.name}}">
-            <p class="font-italic">
-                {{artistData.description}}
-            </p>
-            <h5>Discography</h5>
-            <ul> {% for item in artistAlbums %} <li>{{item.name}}</li> {% endfor %} </ul>
+	
+		<div class ="col-lg-1">
+		</div>
+		
+        <div class="col-lg-7">
+            <div class="card mb-3">
+                <img src="/static/img/{{artistData.image}}" class="img-fluid" alt="photo of {{artistData.name}}">
+                <div class="card-body">
+                  <h3 class="card-title">{{artistData.name}}</h3>
+                  <p class="font-italic">{{artistData.description}}
+				  </p>
+                    <p class="card-text"><small class="text-muted"><h5>Discography</h5>
+						<ul> {% for item in artistAlbums %} <li>{{item.name}}</li> {% endfor %} </ul></small></p>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-4">
-            <h3>Related Music and Artists</h3>
-            <ul> {% for item in artistData.related %} <li>{{item}}</li> {% endfor %} </ul>
+
+        <div class="col-lg-3">
+		    <div class="card mb-3">
+                <img src="../static/img/artists.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Related Music and Artists</h5>
+                    <p class="card-text"><ul> {% for item in artistData.related %} <li>{{item}}</li> {% endfor %} </ul></p>
+                </div>
+            </div> 
         </div>
+		
+		<div class ="col-lg-1">
+		</div>
+		
     </div>
 </body>
 

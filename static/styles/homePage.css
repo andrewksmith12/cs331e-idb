@@ -11,6 +11,15 @@ table.dataTable thead .sorting_desc_disabled:before {
 bottom: .5em;
 }
 
+#tableBody{
+height: 50vw;
+background-image: linear-gradient(#e52e71,#ff8a00);
+
+}
+
+#splashBody{
+	background-image: url("../img/background.jpg");
+}
 @media screen and (min-width: 10px){
 	.nav{
 
