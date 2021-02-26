@@ -17,7 +17,7 @@ background-image: linear-gradient(#e52e71,#ff8a00);
 
 }
 
-#splashBody{
+body{
 	background-image: url("../img/background.jpg");
 }
 @media screen and (min-width: 10px){
