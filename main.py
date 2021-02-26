@@ -58,6 +58,9 @@ def genre(id):
 def album(id):
     return render_template('songPage.html', albumData=albumsData[id], genreIndex=genreIndex)
 
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.debug = True
