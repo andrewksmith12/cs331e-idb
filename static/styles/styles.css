@@ -1,0 +1,16 @@
+h1{
+    font-family: 'Quicksand', sans-serif;
+}
+h2{
+    font-family: 'Quicksand', sans-serif;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-brand{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+.row{
+    margin:2% 0%;
+}
