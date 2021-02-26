@@ -14,7 +14,15 @@
         "albums": [3, 4, 5],
         "related": "",
         "description": "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. Her narrative songwriting, which often takes inspiration from her personal life, has received widespread critical praise and media coverage."
-    }],
+    }, {
+        "name": "AC/DC",
+        "id": 2,
+        "genres": [1],
+        "albums": [3, 4, 5],
+        "related": "",
+        "description": "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. Her narrative songwriting, which often takes inspiration from her personal life, has received widespread critical praise and media coverage."
+    }
+	],
     "genres": [{
         "name": "Hip-hop",
         "id": 0
@@ -78,6 +86,15 @@
         ]
     }, {
         "name": "Folklore",
+        "albumID": 5,
+        "genreID": [
+            4
+        ],
+        "artistID": [
+            1
+        ]
+    }, {
+        "name": "Back in Black",
         "albumID": 5,
         "genreID": [
             4
