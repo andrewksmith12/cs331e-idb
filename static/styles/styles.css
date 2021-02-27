@@ -20,7 +20,47 @@ body{
     background-color:#FFD9CE !important;
 }
 
+.bg-custom{
+    background-color:#FFD9CE !important;
+}
+
 .namePhoto{
     text-align: center;
     align-items: center;
+}
+
+
+
+/* Moved from homePage.css*/
+
+
+
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+
+#tableBody{
+height: 50vw;
+background-image: linear-gradient(#e52e71,#ff8a00);
+
+}
+
+#homeBody{
+	background-image: url("../img/background.jpg");
+}
+
+#infobox{
+	margin:3%;
+	background-color:#FFD9CE;
+	align-items:center;
 }
