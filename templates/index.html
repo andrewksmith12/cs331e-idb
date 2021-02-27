@@ -121,37 +121,9 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-5">
-            <a href="{{url_for('songs')}}">
-                <div class="card mb-3">
-                    <img src="../static/img/allMusic.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">All</h5>
-                        <p class="card-text">Just want to browse? Go through the all category to find new music, artists, and locations. Who knows what you'll find.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-5">
-            <a href="{{url_for('locations')}}">
-                <div class="card mb-3">
-                    <img src="../static/img/locations.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Performing At</h5>
-                        <p class="card-text">Fan of Jazz? Browse by location to find who is taking off in your own music bubble.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-5">
             <a href="{{url_for('artists')}}">
                 <div class="card mb-3">
-                    <img src="../static/img/artists.jpeg" class="card-img-top" alt="...">
+                    <img src="../static/img/artists.jpeg" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Artists</h5>
                         <p class="card-text">Search the Music For You database for the latest and greatest artists or search by older artists for the classics.</p>
@@ -161,19 +133,36 @@
             </a>
         </div>
         <div class="col-md-5">
-            <a href="{{url_for('songs')}}">
+            <a href="{{url_for('locations')}}">
                 <div class="card mb-3">
-                    <img src="../static/img/songs.jpg" class="card-img-top" alt="...">
+                    <img src="../static/img/venues.jpg" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Songs</h5>
-                        <p class="card-text">Search the smallest music library publicly available through Music For You!
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <h5 class="card-title">Venues</h5>
+                        <p class="card-text">Browse music venues from across the world!</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
+                </div>
             </a>
         </div>
-    </div>
-    <div class="col-md-1">
-    </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-5">
+                <a href="{{url_for('songs')}}">
+                    <div class="card mb-3">
+                        <img src="../static/img/songs.jpg" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Songs</h5>
+                            <p class="card-text">Search the smallest music library publicly available through Music For You!
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                </a>
+            </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+        </div>
     </div>
 
 </body>

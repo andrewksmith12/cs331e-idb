@@ -27,7 +27,8 @@
 ],
     "locations": [{
         "name": "Austin",
-        "id": 0
+        "id": 0,
+        "description":"A great city with a great university."
     }, {
         "name": "Classic Rock",
         "id": 1
@@ -42,10 +43,13 @@
         "id": 4
     },{
         "name": "Las Vegas",
-        "id": 5
+        "id": 5,
+        "description":"Vegas, Baby! Listen to some music as you gamble."
+
     },{
         "name": "New York",
-        "id": 6
+        "id": 6, 
+        "description":"concrete jungle where dreams are made of"
     }],
     "albums": [{
         "name": "Ginger",
