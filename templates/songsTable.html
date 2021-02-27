@@ -44,8 +44,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-
                     <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             locations
@@ -64,7 +62,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('artists')}}">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
@@ -84,7 +90,7 @@
 		<h3>Browse Songs</h3>
 
 			<!--table -->
-		<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+		<table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
 		  <thead>
 			<tr>
 			  <th class="th-sm">Song Name

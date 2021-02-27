@@ -29,8 +29,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-
                     <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             locations
@@ -49,7 +47,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('artists')}}">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
@@ -81,7 +87,7 @@
 		    <div class="card mb-3">
                 <img src="../static/img/artists.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Related Music and Artists</h5>
+                    <h5 class="card-title">Discover Music and Artists</h5>
                     <p class="card-text"><ul> {% for item in locationData.related %} <li>{{item}}</li> {% endfor %} </ul></p>
                 </div>
             </div> 

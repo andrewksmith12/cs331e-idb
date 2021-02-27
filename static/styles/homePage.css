@@ -20,62 +20,6 @@ background-image: linear-gradient(#e52e71,#ff8a00);
 #homeBody{
 	background-image: url("../img/background.jpg");
 }
-@media screen and (min-width: 10px){
-	.nav{
-
-	  width: 82vw;
-	  max-width:82vw;
-	  margin:auto;
-	  margin-top: 2em;
-	 
-	}
-
-	.card {
-	  display:inline-block;
-	  margin-top: 2em;
-	  margin: 2em 2em 0 2em;
-	 
-	}
-		
-}
-@media screen and (min-width: 576px) {
-	.nav{
-
-	  width: 82vw;
-	  max-width:82vw;
-	  margin:auto;
-	  margin-top: 2em;
-	 
-	}
-
-	.card {
-	  display:inline-block;
-	  margin-top: 2em;
-	  margin: 2em 2em 0 2em;
-	 
-	}
-		
-}
-
-
-@media screen and (min-width: 992px){
-
-	.nav{
-
-	  width: 82vw;
-	  max-width:82vw;
-	  margin:auto;
-	  margin-top: 2em;
-	}
-
-	.card {
-	  display:inline-block;
-	  margin-top: 2em;
-	  margin: 2em 0em 0 0em;
-	}
-}
-
-
 
 #infobox{
 	margin:3%;

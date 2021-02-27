@@ -45,8 +45,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-
                     <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             locations
@@ -65,7 +63,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('artists')}}">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
@@ -85,42 +91,27 @@
             <h3>Browse Locations</h3>
 
             <!--table -->
-            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+            <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th class="th-sm">Performing At
                         </th>
-                        <th class="th-sm">Stylistic Origins
-                        </th>
-                        <th class="th-sm">Origin Date
-                        </th>
-                        <th class="th-sm">Popular Artist
-                        </th>
-                        <th class="th-sm">Typical Instruments
+                        <th class="th-lg">Description
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Austin</td>
-                        <td>Bronx, New York</td>
-                        <td>1970's</td>
-                        <td>MF Doom</td>
-                        <td>Turn Tables</td>
+                        <td><a href="{{url_for('location',id=0)}}">Austin</a></td>
+                        <td>A great city with a great university</td>
                     </tr>
                     <tr>
-                        <td>New York</td>
-                        <td>U.S. and U.K.</td>
-                        <td>1960's</td>
-                        <td>AC/DC</td>
-                        <td>Electric Guitar</td>
+                        <td><a href="{{url_for('location',id=6)}}">New York</a></td>
+                        <td>Concrete jungle where dreams are made of!</td>
                     </tr>
                     <tr>
-                        <td>Las Vegas</td>
-                        <td>Southern U.S.</td>
-                        <td>1920's</td>
-                        <td>Taylor Swift</td>
-                        <td>Acoustic Guitar</td>
+                        <td><a href="{{url_for('location',id=5)}}">Las Vegas</a></td>
+                        <td>Vegas, Baby! Listen to some music as you gamble</td>
                     </tr>
 
                 </tbody>
@@ -128,13 +119,7 @@
                     <tr>
                         <th >Preforming At
                         </th>
-                        <th >Stylistic Origins
-                        </th>
-                        <th >Origin Date
-                        </th>
-                        <th >Popular Artist
-                        </th>
-                        <th >Typical Instruments
+                        <th >Description
                         </th>
                     </tr>
                 </tfoot>
