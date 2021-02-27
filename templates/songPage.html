@@ -31,7 +31,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
 
-                    <li class="nav-item dropdown">
+                    <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Genres
                         </a>
@@ -45,7 +45,7 @@
                             </li>
                             <li><a class="dropdown-item" href="#">Browse All</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About</a>
                     </li>
@@ -73,7 +73,7 @@
                   <p class="font-italic">{{songData.description}}
 				  </p>
                     <p class="card-text"><small class="text-muted">
-						<ul>  <li>Album: {{songData.album}}</li><li>Artist: {{songData.artist}}</li> <li>Genre: {{songData.genre}}</li> </ul></small></p>
+						<ul>  <li>Album: {{songData.album}}</li><li>Artist: {{songData.artist}}</li> <li>Performing At: {{songData.genre}}</li> </ul></small></p>
                 </div>
             </div>
         </div>
