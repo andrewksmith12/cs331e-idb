@@ -27,6 +27,7 @@
 ],
     "locations": [{
         "name": "Austin",
+        "image": "austin.jpg",
         "id": 0,
         "description":"A great city with a great university."
     }, {
@@ -43,11 +44,13 @@
         "id": 4
     },{
         "name": "Las Vegas",
+        "image": "vegas.jpg",
         "id": 5,
         "description":"Vegas, Baby! Listen to some music as you gamble."
 
     },{
         "name": "New York",
+        "image": "newyork.jpg",
         "id": 6, 
         "description":"Concrete jungle where dreams are made of!"
     }],
