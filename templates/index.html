@@ -33,12 +33,12 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Genres
+                            locations
                         </a>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for genre in genreIndex %}
-                            <li><a class="dropdown-item" href="{{url_for('genre',id=genre.id)}}">{{genre.name}}</a></li>
+                            {% for location in locationIndex %}
+                            <li><a class="dropdown-item" href="{{url_for('location',id=location.id)}}">{{location.name}}</a></li>
                             {% endfor %}
                             <li>
                                 <hr class="dropdown-divider">
@@ -48,6 +48,15 @@
                     </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('artists')}}">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -93,14 +102,14 @@
             </div>
             <!--carousel end-->
 
-            <!-- genre nav
+            <!-- location nav
             <nav class="nav nav-pills nav-fill">
-                <a class="nav-link active" aria-current="page" href="#">Genre</a>
+                <a class="nav-link active" aria-current="page" href="#">location</a>
                 <a class="nav-link" href="#">Artist</a>
                 <a class="nav-link" href="#">Songs</a>
                 <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Favorites</a>
             </nav>
-			<!--genre nav end -->
+			<!--location nav end -->
 
 
         </div>
@@ -117,19 +126,19 @@
                     <img src="../static/img/allMusic.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">All</h5>
-                        <p class="card-text">Just want to browse? Go through the all category to find new music, artists, and genres. Who knows what you'll find.</p>
+                        <p class="card-text">Just want to browse? Go through the all category to find new music, artists, and locations. Who knows what you'll find.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
             </a>
         </div>
         <div class="col-md-5">
-            <a href="{{url_for('genres')}}">
+            <a href="{{url_for('locations')}}">
                 <div class="card mb-3">
-                    <img src="../static/img/genres.jpg" class="card-img-top" alt="...">
+                    <img src="../static/img/locations.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Performing At</h5>
-                        <p class="card-text">Fan of Jazz? Browse by genre to find who is taking off in your own music bubble.</p>
+                        <p class="card-text">Fan of Jazz? Browse by location to find who is taking off in your own music bubble.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>{{genreData.name}}</title>
+    <title>{{locationData.name}}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!-- Favicons -->
@@ -33,12 +33,12 @@
 
                     <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Genres
+                            locations
                         </a>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for genre in genreIndex %}
-                            <li><a class="dropdown-item" href="{{url_for('genre',id=genre.id)}}">{{genre.name}}</a></li>
+                            {% for location in locationIndex %}
+                            <li><a class="dropdown-item" href="{{url_for('location',id=location.id)}}">{{location.name}}</a></li>
                             {% endfor %}
                             <li>
                                 <hr class="dropdown-divider">
@@ -67,10 +67,10 @@
 		
         <div class="col-lg-7">
             <div class="card mb-3">
-                <img src="/static/img/{{genreData.image}}" class="img-fluid" alt="photo of {{genreData.name}}">
+                <img src="/static/img/{{locationData.image}}" class="img-fluid" alt="photo of {{locationData.name}}">
                 <div class="card-body">
-                  <h3 class="card-title">{{genreData.name}}</h3>
-                  <p class="font-italic">{{genreData.description}}
+                  <h3 class="card-title">{{locationData.name}}</h3>
+                  <p class="font-italic">{{locationData.description}}
 				  </p>
 
                 </div>
@@ -82,7 +82,7 @@
                 <img src="../static/img/artists.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Related Music and Artists</h5>
-                    <p class="card-text"><ul> {% for item in genreData.related %} <li>{{item}}</li> {% endfor %} </ul></p>
+                    <p class="card-text"><ul> {% for item in locationData.related %} <li>{{item}}</li> {% endfor %} </ul></p>
                 </div>
             </div> 
         </div>

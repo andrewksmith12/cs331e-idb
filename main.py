@@ -6,13 +6,13 @@ app = Flask(__name__)
 datafile = os.path.join(app.static_folder, 'data', 'data.json')
 data = json.load(open(datafile))
 artistsData = data["artists"]
-genresData = data["genres"]
+locationsData = data["locations"]
 albumsData = data["albums"]
 
-# genreIndex is used for dynamically updating navbar dropdown as genres are added
-genreIndex = [None]*len(genresData)
-for thisGenre in genresData:
-    genreIndex[int(thisGenre["id"])] = thisGenre
+# locationIndex is used for dynamically updating navbar dropdown as locations are added
+locationIndex = [None]*len(locationsData)
+for thislocation in locationsData:
+    locationIndex[int(thislocation["id"])] = thislocation
 
 
 def getArtistAlbums(albumList):
@@ -24,39 +24,39 @@ def getArtistAlbums(albumList):
 
 @app.route('/')
 def index():
-    return render_template('index.html', genreIndex=genreIndex)
+    return render_template('index.html', locationIndex=locationIndex)
 
 
 @app.route('/search-by-artist', methods=['GET'])
 def artists():
-    return render_template('artistsTable.html', genreIndex=genreIndex)
+    return render_template('artistsTable.html', locationIndex=locationIndex)
 
 
 @app.route('/search-by-song', methods=['GET'])
 def songs():
-    return render_template('songsTable.html', genreIndex=genreIndex)
+    return render_template('songsTable.html', locationIndex=locationIndex)
 
 
-@app.route('/search-by-genre', methods=['GET'])
-def genres():
-    return render_template('genresTable.html', genreIndex=genreIndex)
+@app.route('/search-by-location', methods=['GET'])
+def locations():
+    return render_template('locationsTable.html', locationIndex=locationIndex)
 
 
 @app.route('/artist/<int:id>', methods=['GET'])
 def artist(id):
     artistData = artistsData[int(id)]
     artistAlbums = getArtistAlbums(artistData["albums"])
-    return render_template('artistPage.html', artistData=artistData, artistAlbums=artistAlbums, genreIndex=genreIndex)
+    return render_template('artistPage.html', artistData=artistData, artistAlbums=artistAlbums, locationIndex=locationIndex)
 
 
-@app.route('/genre/<int:id>', methods=['GET'])
-def genre(id):
-    return render_template('genrePage.html', genreData=genresData[id], genreIndex=genreIndex)
+@app.route('/location/<int:id>', methods=['GET'])
+def location(id):
+    return render_template('locationsPage.html', locationData=locationsData[id], locationIndex=locationIndex)
 
 
 @app.route('/album/<int:id>', methods=['GET'])
 def album(id):
-    return render_template('songPage.html', albumData=albumsData[id], genreIndex=genreIndex)
+    return render_template('songPage.html', albumData=albumsData[id], locationIndex=locationIndex)
 
 @app.route('/about', methods=['GET'])
 def about():

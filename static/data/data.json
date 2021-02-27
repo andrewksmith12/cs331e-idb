@@ -2,7 +2,7 @@
     "artists": [{
         "name": "Brockhampton",
         "id": 0,
-        "genres": [0],
+        "locations": [0],
         "albums": [0, 1, 2],
         "image": "brockhampton.jpg",
         "related": ["Domo Genesis", "Kenny Beats", "Youth of the Apocalypse", "Lou the Human", "Shoreline Mafia"],
@@ -10,7 +10,7 @@
     }, {
         "name": "Taylor Swift",
         "id": 1,
-        "genres": [2],
+        "locations": [2],
         "image": "taylorswift.jpg",
         "albums": [3, 4, 5],
         "related": "",
@@ -18,15 +18,15 @@
     },{
         "name": "AC/DC",
         "id": 2,
-        "genres": [6],
+        "locations": [6],
         "image": "ACDC.jpg",
         "albums": [6, 7, 8],
         "related": "",
         "description": "AC/DC (stylised as ACϟDC) are an Australian rock band formed in Sydney in 1973 by Scottish-born brothers Malcolm and Angus Young. Although their music has been variously described as hard rock, blues rock, and heavy metal, the band themselves call it simply \"rock and roll\"."
     }
 ],
-    "genres": [{
-        "name": "Hip-hop",
+    "locations": [{
+        "name": "Austin",
         "id": 0
     }, {
         "name": "Classic Rock",
@@ -41,16 +41,16 @@
         "name": "Alternative",
         "id": 4
     },{
-        "name": "Pop",
+        "name": "Las Vegas",
         "id": 5
     },{
-        "name": "Hard Rock",
+        "name": "New York",
         "id": 6
     }],
     "albums": [{
         "name": "Ginger",
         "albumID": 0,
-        "genres": [
+        "locations": [
             0
         ],
         "artistID": [
@@ -59,7 +59,7 @@
     }, {
         "name": "Iridescence",
         "albumID": 1,
-        "genreID": [
+        "locationID": [
             0
         ],
         "artistID": [
@@ -68,7 +68,7 @@
     }, {
         "name": "Saturation III",
         "albumID": 2,
-        "genreID": [
+        "locationID": [
             0
         ],
         "artistID": [
@@ -77,7 +77,7 @@
     }, {
         "name": "Taylor Swift",
         "albumID": 3,
-        "genreID": [
+        "locationID": [
             2
         ],
         "artistID": [
@@ -86,7 +86,7 @@
     }, {
         "name": "Red",
         "albumID": 4,
-        "genreID": [
+        "locationID": [
             2
         ],
         "artistID": [
@@ -95,7 +95,7 @@
     }, {
         "name": "Folklore",
         "albumID": 5,
-        "genreID": [
+        "locationID": [
             4
         ],
         "artistID": [
@@ -104,7 +104,7 @@
     }, {
         "name": "Power Up",
         "albumID": 6,
-        "genreID": [
+        "locationID": [
             5
         ],
         "artistID": [
@@ -113,7 +113,7 @@
     }, {
         "name": "Rock or Bust",
         "albumID": 7,
-        "genreID": [
+        "locationID": [
             5
         ],
         "artistID": [
@@ -122,7 +122,7 @@
     }, {
         "name": "Live at River Plate",
         "albumID": 8,
-        "genreID": [
+        "locationID": [
             5
         ],
         "artistID": [

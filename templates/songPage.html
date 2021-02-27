@@ -33,12 +33,12 @@
 
                     <!--<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Genres
+                            locations
                         </a>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for genre in genreIndex %}
-                            <li><a class="dropdown-item" href="{{url_for('genre',id=genre.id)}}">{{genre.name}}</a></li>
+                            {% for location in locationIndex %}
+                            <li><a class="dropdown-item" href="{{url_for('location',id=location.id)}}">{{location.name}}</a></li>
                             {% endfor %}
                             <li>
                                 <hr class="dropdown-divider">
@@ -73,7 +73,7 @@
                   <p class="font-italic">{{songData.description}}
 				  </p>
                     <p class="card-text"><small class="text-muted">
-						<ul>  <li>Album: {{songData.album}}</li><li>Artist: {{songData.artist}}</li> <li>Performing At: {{songData.genre}}</li> </ul></small></p>
+						<ul>  <li>Album: {{songData.album}}</li><li>Artist: {{songData.artist}}</li> <li>Performing At: {{songData.location}}</li> </ul></small></p>
                 </div>
             </div>
         </div>
