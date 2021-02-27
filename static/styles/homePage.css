@@ -60,26 +60,6 @@ background-image: linear-gradient(#e52e71,#ff8a00);
 
 @media screen and (min-width: 992px){
 
-	.carousel img {
-
-	  width: 82vw;
-	  max-width:82vw;
-	  height: 52vw;
-	  max-height: 52vw;
-	  margin:auto;
-
-	}
-
-	.carousel {
-	  width: 82vw;
-	  max-width:82vw;
-	  height: 52vw;
-	  max-height: 52vw;
-	  margin:auto;
-	  margin-top: 2em;
-	}
-
-
 	.nav{
 
 	  width: 82vw;
@@ -97,4 +77,8 @@ background-image: linear-gradient(#e52e71,#ff8a00);
 
 
 
-	
+#infobox{
+	margin:3%;
+	background-color:#FFD9CE;
+	align-items:center;
+}
