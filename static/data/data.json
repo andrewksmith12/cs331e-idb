@@ -11,10 +11,20 @@
         "name": "Taylor Swift",
         "id": 1,
         "genres": [2],
+        "image": "taylorswift.jpg",
         "albums": [3, 4, 5],
         "related": "",
         "description": "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. Her narrative songwriting, which often takes inspiration from her personal life, has received widespread critical praise and media coverage."
-    }],
+    },{
+        "name": "AC/DC",
+        "id": 2,
+        "genres": [6],
+        "image": "ACDC.jpg",
+        "albums": [6, 7, 8],
+        "related": "",
+        "description": "AC/DC (stylised as ACϟDC) are an Australian rock band formed in Sydney in 1973 by Scottish-born brothers Malcolm and Angus Young. Although their music has been variously described as hard rock, blues rock, and heavy metal, the band themselves call it simply \"rock and roll\"."
+    }
+],
     "genres": [{
         "name": "Hip-hop",
         "id": 0
@@ -30,6 +40,12 @@
     }, {
         "name": "Alternative",
         "id": 4
+    },{
+        "name": "Pop",
+        "id": 5
+    },{
+        "name": "Hard Rock",
+        "id": 6
     }],
     "albums": [{
         "name": "Ginger",
@@ -84,6 +100,33 @@
         ],
         "artistID": [
             1
+        ]
+    }, {
+        "name": "Power Up",
+        "albumID": 6,
+        "genreID": [
+            5
+        ],
+        "artistID": [
+            2
+        ]
+    }, {
+        "name": "Rock or Bust",
+        "albumID": 7,
+        "genreID": [
+            5
+        ],
+        "artistID": [
+            2
+        ]
+    }, {
+        "name": "Live at River Plate",
+        "albumID": 8,
+        "genreID": [
+            5
+        ],
+        "artistID": [
+            2
         ]
     }]
 }
