@@ -23,7 +23,6 @@
         "description": "AC/DC (stylised as ACϟDC) are an Australian rock band formed in Sydney in 1973 by Scottish-born brothers Malcolm and Angus Young. Although their music has been variously described as hard rock, blues rock, and heavy metal, the band themselves call it simply \"rock and roll\"."
     }
 ],
-
     "genres": [{
         "name": "Hip-hop",
         "id": 0
@@ -93,6 +92,15 @@
         ]
     }, {
         "name": "Folklore",
+        "albumID": 5,
+        "genreID": [
+            4
+        ],
+        "artistID": [
+            1
+        ]
+    }, {
+        "name": "Back in Black",
         "albumID": 5,
         "genreID": [
             4

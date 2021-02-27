@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>{{artistData.name}}</title>
+    <title>{{genreData.name}}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!-- Favicons -->
@@ -67,13 +67,12 @@
 		
         <div class="col-lg-7">
             <div class="card mb-3">
-                <img src="/static/img/{{artistData.image}}" class="img-fluid" alt="photo of {{artistData.name}}">
+                <img src="/static/img/{{genreData.image}}" class="img-fluid" alt="photo of {{genreData.name}}">
                 <div class="card-body">
-                  <h3 class="card-title">{{artistData.name}}</h3>
-                  <p class="font-italic">{{artistData.description}}
+                  <h3 class="card-title">{{genreData.name}}</h3>
+                  <p class="font-italic">{{genreData.description}}
 				  </p>
-                    <p class="card-text"><small class="text-muted"><h5>Discography</h5>
-						<ul> {% for item in artistAlbums %} <li>{{item.name}}</li> {% endfor %} </ul></small></p>
+
                 </div>
             </div>
         </div>
@@ -83,7 +82,7 @@
                 <img src="../static/img/artists.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Related Music and Artists</h5>
-                    <p class="card-text"><ul> {% for item in artistData.related %} <li>{{item}}</li> {% endfor %} </ul></p>
+                    <p class="card-text"><ul> {% for item in genreData.related %} <li>{{item}}</li> {% endfor %} </ul></p>
                 </div>
             </div> 
         </div>
