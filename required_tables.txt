@@ -1,0 +1,26 @@
+Artist:
+-ID
+-Name
+
+Album:
+-ID
+-Name
+-Release date
+
+Song:
+-Parent Album
+-pos. in album (weak key)
+-name
+
+Genre:
+-ID
+-Name
+
+Joining Tables:
+Artist/Album
+Artist/Genre
+Album/Genre
+
+
+
+
