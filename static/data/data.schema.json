@@ -1,0 +1,152 @@
+{
+    "type": "object",
+    "title": "root",
+    "required": [
+        "artists",
+        "songs",
+        "locations",
+        "albums"
+    ],
+    "properties": {
+        "artists": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "artist",
+                "required": [
+                    "name",
+                    "id"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    },
+                    "image": {
+                        "type": "string",
+                        "description": "Path to image location"
+                    },
+                    "related": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": true
+            }
+        },
+        "locations": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Location",
+                "required": [
+                    "name",
+                    "id"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": true
+            }
+        },
+        "genres": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "id"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    }
+                },
+                "additionalProperties": true
+            }
+        },
+        "albums": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "title",
+                    "id"
+                ],
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "additionalProperties": true
+            }
+        },
+        "songs": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "title", "id", "artists", "albums"
+                ],
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "albums": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "artists": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

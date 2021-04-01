@@ -70,6 +70,8 @@ def create_albums():
         title = album['title']
         id = album['id']
         newAlbum = Album(title=title, id=id)
+        db.session.add(newAlbum)
+        db.session.commit()
 
 
 create_artists()
