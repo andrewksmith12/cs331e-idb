@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy, Table, Column, Integer, ForeignKey
 from flask_sqlalchemy.orm import relationship
-import os
+from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
