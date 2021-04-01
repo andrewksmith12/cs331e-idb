@@ -20,7 +20,3 @@ Joining Tables:
 Artist/Album
 Artist/Genre
 Album/Genre
-
-
-
-
