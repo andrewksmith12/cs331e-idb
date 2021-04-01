@@ -53,7 +53,6 @@ class Song(db.Model):
 
     title = Column(db.String(80), nullable=False)
     id = Column(Integer, primary_key=True)
-    album_id = Column(Integer, ForeignKey('album.id'))
     artists = relationship(
         'Artist', secondary=artist_song_table, backpopulates="songs")
     albums = relationship(
