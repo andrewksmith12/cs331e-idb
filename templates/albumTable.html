@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Music For You - Albums</title>
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+    <!-- CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.css" />
+    <link href="../static/styles/styles.css" rel="stylesheet">
+    <!-- JS Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.js"></script>
+    <script src="/static/sort.js"></script>
+</head>
+
+<body id="tableBody">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{url_for('index')}}">Music For You</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            locations
+                        </a>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for location in locationIndex %}
+                            <li><a class="dropdown-item" href="{{url_for('location',id=location.id)}}">{{location.name}}</a></li>
+                            {% endfor %}
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Browse All</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('about')}}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('artists')}}">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Main Infobox -->
+    <div class="row">
+        <br>
+        <div class="col-md-2 col-md-0">
+        </div>
+        <div class="col-lg-8 col-md-12 bg-custom">
+            <br>
+            <h3>Browse Songs by Artist</h3>
+            <!--table -->
+            <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">Artist Name
+                        </th>
+                        <th class="th-sm">Performing At
+                        </th>
+                        <th class="th-sm">Top Song
+                        </th>
+                        <th class="th-sm">Origin
+                        </th>
+                        <th class="th-sm">Release Year
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="{{url_for('artist',id=2)}}">AC/DC</a></td>
+                        <td><a href="{{url_for('location',id=6)}}">New York</a></td>
+                        <td>Highway to Hell</td>
+                        <td>Sydney, Australia</td>
+                        <td>1973</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{{url_for('artist',id=0)}}">Brockhampton</a></td>
+                        <td><a href="{{url_for('location',id=0)}}">Austin</a></td>
+                        <td>Sugar</td>
+                        <td>San Marcos, Texas</td>
+                        <td>2010</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{{url_for('artist',id=1)}}">Taylor Swift</a></td>
+                        <td><a href="{{url_for('location',id=5)}}">Las Vegas</a></td>
+                        <td>Willow</td>
+                        <td>West Reading, Pennsylvania</td>
+                        <td>2020</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th class=>Artist Name
+                        </th>
+                        <th class=>Performing At
+                        </th>
+                        <th class=>Top Song
+                        </th>
+                        <th class=>Origin
+                        </th>
+                        <th class=>Release Year
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+            <br><br><br><br>
+            <!--table end-->
+        </div>
+        <div class="col-md-2 col-md-0">
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>

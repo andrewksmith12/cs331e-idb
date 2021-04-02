@@ -3,18 +3,14 @@
 
 import json
 import os
-from models import app, db, Artist, Song, Album  # , Location
+from models import app, db, Artist, Song, Album, Song_Artist, Song_Album  # , Location
+query = db.session.query
+add = db.session.add
+commit = db.session.commit
 
 # ------------
 # load_json
 # ------------
-
-datafile = os.path.join(app.static_folder, 'data', 'data.json')
-data = json.load(open(datafile))
-artists = data["artists"]
-locationsData = data["locations"]
-albums = data["albums"]
-songs = data["songs"]
 
 
 def load_json(filename):
@@ -29,47 +25,58 @@ def load_json(filename):
     return jsn
 
 
-def create_songs():
-    """
-    populate songs table
-    """
-    for song in songs:
-        title = song['title']
-        id = song['id']
-        artists = song['artists']
-        albums = song['albums']
+datafile = os.path.join(app.static_folder, 'data', 'dbdata.json')
+data = load_json(datafile)
+length = len(data)
 
-        newSong = Song(title=title, id=id, artists=artists, albums=albums)
-        db.session.add(newSong)
-        db.session.commit()
+track_id = 0
+album_id = 0
+artist_id = 0
 
+next_album_id = 0
+next_artist_id = 0
 
-def create_artists():
-    """
-    populate artist table
-    """
+tracks = [""]*length
+albums = [""]*length
+artists = [""]*length
 
-    for artist in artists:
-        name = artist['name']
-        id = artist['id']
+previous_track = ""
+previous_album = ""
+previous_artist = ""
 
-        newArtist = Artist(name=name, id=id)
-        db.session.add(newArtist)
-        db.session.commit()
+for item in data:
+    track = item['track']
+    album = item['album']
+    artist = item['artist']
 
+    # Optimization to avoid indexing a thousand entry dictionary
+    if artist != previous_artist:
+        if artist in artists:
+            artist_id = artist.index(artist)
+        else:
+            artist_id = next_artist_id
+            artists[artist_id] = artist
+            next_artist_id += 1
+            newArtist = Artist(name=artist, id=artist_id)
+            add(newArtist)
 
-def create_albums():
-    """
-    populate albums table
-    """
-    for album in albums:
-        title = album['title']
-        id = album['id']
-        newAlbum = Album(title=title, id=id)
-        db.session.add(newAlbum)
-        db.session.commit()
+    if album != previous_album:
+        if album in albums:
+            album_id = albums.index(album)
+        else:
+            album_id = next_album_id
+            albums[album_id] = album
+            next_album_id += 1
+            newAlbum = Album(title=album, id=album_id)
+            add(newAlbum)
 
+    tracks[track_id] = track
+    track_id += 1
+    newTrack = Song(title=track, id=track_id)
+    add(newTrack)
 
-create_artists()
-create_songs()
-create_albums()
+    newSongArtist = Song_Artist(artist_id=artist_id, song_id=track_id)
+    add(newSongArtist)
+    newSongAlbum = Song_Album(album_id=album_id, song_id=track_id)
+    add(newSongAlbum)
+    commit()

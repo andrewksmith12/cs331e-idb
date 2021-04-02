@@ -52,9 +52,10 @@ class Artist(db.Model):
 
     __tablename__ = 'artist'
 
-    name = Column(db.String(80), nullable=False)
+    name = Column(db.String(140), nullable=False)
     id = Column(Integer, primary_key=True)
     songs = relationship("Song_Artist", back_populates="artist")
+    thumbnail = Column(db.String(80))
 
 
 class Song(db.Model):
@@ -62,7 +63,7 @@ class Song(db.Model):
 
     __tablename__ = 'song'
 
-    title = Column(db.String(80), nullable=False)
+    title = Column(db.String(140), nullable=False)
     id = Column(Integer, primary_key=True)
     artists = relationship("Song_Artist", back_populates="song")
     albums = relationship("Song_Album", back_populates="song")
@@ -73,7 +74,7 @@ class Album(db.Model):
 
     __tablename__ = 'album'
 
-    title = Column(db.String(80), nullable=False)
+    title = Column(db.String(140), nullable=False)
     id = Column(Integer, primary_key=True)
     songs = relationship("Song_Album", back_populates="album")
 

@@ -3,6 +3,7 @@ from create_db import app, db, Artist, Song, Album
 import random
 import os
 app = Flask(__name__)
+query = db.session.query
 
 datafile = os.path.join(app.static_folder, 'data', 'data.json')
 data = json.load(open(datafile))
@@ -28,18 +29,19 @@ def index():
 
 @app.route('/search-by-artist', methods=['GET'])
 def artists():
-    artist_list = db.session.query(Artist).all()
+    artist_list = query(Artist).all()
     return render_template('artistsTable.html', locationIndex=locationIndex, artist_list=artist_list)
 
 
 @app.route('/search-by-song', methods=['GET'])
 def songs():
-    return render_template('songsTable.html', locationIndex=locationIndex)
+    song_list = query(Song).all()
+    return render_template('songsTable.html', locationIndex=locationIndex, song_list=song_list)
 
 
-@app.route('/search-by-location', methods=['GET'])
+"""@app.route('/search-by-location', methods=['GET'])
 def locations():
-    return render_template('locationsTable.html', locationIndex=locationIndex)
+    return render_template('locationsTable.html', locationIndex=locationIndex)"""
 
 
 @app.route('/artist/<int:id>', methods=['GET'])
@@ -49,9 +51,9 @@ def artist(id):
     return render_template('artistPage.html', artistData=artistData, artistAlbums=artistAlbums, locationIndex=locationIndex)
 
 
-@app.route('/location/<int:id>', methods=['GET'])
+"""@app.route('/location/<int:id>', methods=['GET'])
 def location(id):
-    return render_template('locationsPage.html', locationData=locationsData[id], locationIndex=locationIndex)
+    return render_template('locationsPage.html', locationData=locationsData[id], locationIndex=locationIndex)"""
 
 
 @app.route('/album/<int:id>', methods=['GET'])
