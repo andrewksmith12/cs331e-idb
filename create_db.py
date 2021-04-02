@@ -70,6 +70,6 @@ def create_albums():
         db.session.commit()
 
 
-create_songs()
 create_artists()
+create_songs()
 create_albums()
