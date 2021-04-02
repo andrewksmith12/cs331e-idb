@@ -1,13 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, json
+from create_db import app, db, Artist, Song, Album
 import random
 import os
 app = Flask(__name__)
 
 datafile = os.path.join(app.static_folder, 'data', 'data.json')
 data = json.load(open(datafile))
-artistsData = data["artists"]
 locationsData = data["locations"]
-albumsData = data["albums"]
 
 # locationIndex is used for dynamically updating navbar dropdown as locations are added
 locationIndex = [None]*len(locationsData)
@@ -15,11 +14,11 @@ for thislocation in locationsData:
     locationIndex[int(thislocation["id"])] = thislocation
 
 
-def getArtistAlbums(albumList):
+"""def getArtistAlbums(albumList):
     artistAlbums = [None]*len(albumList)
     for i, albumID in enumerate(albumList):
         artistAlbums[i] = albumsData[albumID]
-    return artistAlbums
+    return artistAlbums"""
 
 
 @app.route('/')
@@ -29,7 +28,8 @@ def index():
 
 @app.route('/search-by-artist', methods=['GET'])
 def artists():
-    return render_template('artistsTable.html', locationIndex=locationIndex)
+    artist_list = db.session.query(Artist).all()
+    return render_template('artistsTable.html', locationIndex=locationIndex, artist_list=artist_list)
 
 
 @app.route('/search-by-song', methods=['GET'])
@@ -58,9 +58,11 @@ def location(id):
 def album(id):
     return render_template('songPage.html', albumData=albumsData[id], locationIndex=locationIndex)
 
+
 @app.route('/about', methods=['GET'])
 def about():
     return render_template('about.html')
+
 
 if __name__ == '__main__':
     app.debug = True
