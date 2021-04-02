@@ -1,1 +1,4 @@
 runtime: python39
+env_variables:
+  DB_STRING: "postgresql+psycopg2://postgres:musicforyou-db@/postgres?host=/cloudsql/cs329e-idb-212120:us-central1:bookdb"
+cloud_sql_instances: cs-331e-labs:us-central1:musicforyou-db
