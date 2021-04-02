@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify, j
 from create_db import app, db, Artist, Song, Album
 import random
 import os
-app = Flask(__name__)
 query = db.session.query
 
 datafile = os.path.join(app.static_folder, 'data', 'data.json')
@@ -37,6 +36,11 @@ def artists():
 def songs():
     song_list = query(Song).all()
     return render_template('songsTable.html', locationIndex=locationIndex, song_list=song_list)
+    
+@app.route('/search-by-album', methods=['GET'])
+def albums():
+    song_list = query(Song).all()
+    return render_template('albumTable.html', locationIndex=locationIndex, song_list=song_list)
 
 
 """@app.route('/search-by-location', methods=['GET'])
