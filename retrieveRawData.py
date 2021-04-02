@@ -1,5 +1,8 @@
 import requests
 import json
+import os
+from flask import Flask
+app = Flask(__name__)
 
 CLIENT_ID = "adcb7fe6a96a4e4db325d9c5440b0419"
 CLIENT_SECRET = "51eaeca06fae4f0383bf7b298d7c3773"
@@ -37,9 +40,9 @@ data = r.json()
 uziSongs = []
 for i in data["tracks"]:
     uziSongs.append(i["name"])
-print(uziSongs)
-print(data["tracks"][0]["name"])
-print(data["tracks"][0]["album"]["name"])
+# print(uziSongs)
+# print(data["tracks"][0]["name"])
+# print(data["tracks"][0]["album"]["name"])
 
 
 tracks = []
@@ -51,10 +54,12 @@ for artistKey in artists.keys():
     for j in data["tracks"]:
         track = (j["name"])
         album = j["album"]["name"]
-        dict = {"track": track.encode(
-            'utf-8'), "album": album.encode('utf-8'), "artist": artists[artistKey].encode('utf-8')}
+        dict = {"track": track, "album": album, "artist": artists[artistKey]}
         tracks.append(dict)
 
 
-print(tracks)
-print(len(tracks))
+# print(tracks)
+# print(len(tracks))
+datafile = os.path.join(app.static_folder, 'data', 'dbdata.json')
+with open(datafile, 'w') as fout:
+    json.dump(tracks, fout)
