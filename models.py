@@ -2,8 +2,9 @@
 
 import os
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy, Table, Column, Integer, ForeignKey
-from flask_sqlalchemy.orm import relationship
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Table, Column, Integer, ForeignKey
+from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
@@ -13,19 +14,20 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
 # to suppress a warning message
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
+db.metadata.clear()
 
-artist_song_table = Table('association', Base.metadata,
+artist_song_table = Table('song_to_artist', Base.metadata,
                           Column('artist_id', Integer,
                                  ForeignKey('artist.id')),
                           Column('song_id', Integer,
-                                 ForeignKey('album.id'))
+                                 ForeignKey('song.id'))
                           )
 
-song_album_table = Table('association', Base.metadata,
+song_album_table = Table('song_to_album', Base.metadata,
                          Column('album_id', Integer,
-                                ForeignKey('artist.id')),
+                                ForeignKey('album.id')),
                          Column('song_id', Integer,
-                                ForeignKey('album.id'))
+                                ForeignKey('song.id'))
                          )
 
 
@@ -36,10 +38,10 @@ class Artist(db.Model):
 
     name = Column(db.String(80), nullable=False)
     id = Column(Integer, primary_key=True)
-    songs = relationship(
-        'Song', secondary=artist_song_table, backpopulates="artists")
+    """songs = relationship(
+        'Song', secondary=artist_song_table, back_populates="artists")"""
 
-    albums = relationship("Album", lazy="joined", innerjoin=True)
+    """albums = relationship("Album", lazy="joined", innerjoin=True)"""
 
     """genres = relationship('Genre',
                           secondary=artist_genre_table,
@@ -54,9 +56,9 @@ class Song(db.Model):
     title = Column(db.String(80), nullable=False)
     id = Column(Integer, primary_key=True)
     artists = relationship(
-        'Artist', secondary=artist_song_table, backpopulates="songs")
+        'Artist', secondary=artist_song_table, back_populates="songs")
     albums = relationship(
-        'Album', secondary=song_album_table, backpopulates="songs")
+        'Album', secondary=song_album_table, back_populates="songs")
 
 
 class Album(db.Model):
@@ -67,15 +69,13 @@ class Album(db.Model):
     title = Column(db.String(80), nullable=False)
     id = Column(Integer, primary_key=True)
 
-    songs = relationship('Song',
+    """songs = relationship('Song',
                          secondary=song_album_table,
-                         backpopulates='albums')
-
-    artists = relationship('Artist', lazy="joined", innerjoin=True)
+                         back_populates='albums')"""
 
     """genres = relationship('Genre',
                           secondary=artist_genre_table,
-                          backpopulates='albums')"""
+                          back_populates='albums')"""
 
 
 """class Genre(db.Model):
@@ -87,11 +87,11 @@ class Album(db.Model):
 
     artists = relationship('Artist',
                            secondary=artist_album_table,
-                           backpopulates='genres')
+                           back_populates='genres')
 
     albums = relationship('Album',
                           secondary=artist_album_table,
-                          backpopulates='genres')"""
+                          back_populates='genres')"""
 
 
 db.drop_all()

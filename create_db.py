@@ -3,7 +3,7 @@
 
 import json
 import os
-from models import app, db, Artist, Song, Album, Location
+from models import app, db, Artist, Song, Album  # , Location
 
 # ------------
 # load_json
@@ -28,24 +28,6 @@ def load_json(filename):
 
     return jsn
 
-# ------------
-# create_artists
-# ------------
-
-
-def create_artists():
-    """
-    populate artist table
-    """
-
-    for artist in artists:
-        name = artist['name']
-        id = artist['id']
-
-        newArtist = Artist(name=name, id=id)
-        db.session.add(newArtist)
-        db.session.commit()
-
 
 def create_songs():
     """
@@ -62,6 +44,20 @@ def create_songs():
         db.session.commit()
 
 
+def create_artists():
+    """
+    populate artist table
+    """
+
+    for artist in artists:
+        name = artist['name']
+        id = artist['id']
+
+        newArtist = Artist(name=name, id=id)
+        db.session.add(newArtist)
+        db.session.commit()
+
+
 def create_albums():
     """
     populate albums table
@@ -74,4 +70,6 @@ def create_albums():
         db.session.commit()
 
 
+create_songs()
 create_artists()
+create_albums()
