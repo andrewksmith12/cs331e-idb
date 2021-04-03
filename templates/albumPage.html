@@ -62,7 +62,7 @@
                 <img src="{{albumID.thumbnail}}" class="img-fluid" alt="photo of {{albumID.name}}">
                 <div class="card-body">
                     <h3 class="card-title">{{albumID.title}}</h3>
-                    <p class="font-italic">{{albumID.artist.name}}
+                    <p class="font-italic"><a href="{{url_for('artist', id=albumID.artist.id)}}">{{albumID.artist.name}}</a>
                     </p>
                     <p class="card-text"><small class="text-muted">
                             <h5>Top Track: <a href="{{url_for('song',id=albumID.songs[0].song.id)}}">{{albumID.songs[0].song.title}}</a></h5>
