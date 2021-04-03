@@ -39,8 +39,6 @@ artistsCreated = []
 albumsCreated = []
 songsCreated = []
 errorSongs = []
-for item in artistList:
-    artistsCreated.append(item)
 for artist in artistList:
     print("Add artist from billboard charts: "+artist)
     r = requests.get(BASE_URL + 'artists/' + artist, headers=auth_header, params={'market': 'US'})
@@ -69,10 +67,7 @@ for artist in artistList:
                     db.session.add(newAdditionalArtist)
                 dbArtist = db.session.query(Artist).filter(Artist.id==artist['id']).first()
                 print("Start Song-Artist Rel: artist:"+song['id']+" artist: "+artist['id'])
-                try:
-                    Song_Artist(artist_id=dbArtist.id, song_id=newSong.id, artist=dbArtist, song=newSong)
-                except:
-                    pass
+                Song_Artist(artist_id=dbArtist.id, song_id=newSong.id, artist=dbArtist, song=newSong)
             if song['album']['id'] not in albumsCreated:
                 newAlbum = Album(id=song['album']['id'], title=song['album']['name'], thumbnail=song['album']['images'][0]['url'])
                 albumsCreated.append(song['album']['id'])
