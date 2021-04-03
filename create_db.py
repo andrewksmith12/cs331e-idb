@@ -52,7 +52,7 @@ for item in data:
     # Optimization to avoid indexing a thousand entry dictionary
     if artist != previous_artist:
         if artist in artists:
-            artist_id = artist.index(artist)
+            artist_id = artists.index(artist)
         else:
             artist_id = next_artist_id
             artists[artist_id] = artist

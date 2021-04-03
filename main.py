@@ -28,20 +28,25 @@ def index():
 
 @app.route('/search-by-artist', methods=['GET'])
 def artists():
+    song_list = query(Song).all()
+    album_list = query(Album).all()
     artist_list = query(Artist).all()
-    return render_template('artistsTable.html', locationIndex=locationIndex, artist_list=artist_list)
+    return render_template('artistsTable.html', locationIndex=locationIndex, song_list=song_list, album_list = album_list, artist_list = artist_list)
 
 
 @app.route('/search-by-song', methods=['GET'])
 def songs():
     song_list = query(Song).all()
     album_list = query(Album).all()
-    return render_template('songsTable.html', locationIndex=locationIndex, song_list=song_list, album_list = album_list)
+    artist_list = query(Artist).all()
+    return render_template('songsTable.html', locationIndex=locationIndex, song_list=song_list, album_list = album_list, artist_list = artist_list)
     
 @app.route('/search-by-album', methods=['GET'])
 def albums():
     song_list = query(Song).all()
-    return render_template('albumTable.html', locationIndex=locationIndex, song_list=song_list)
+    album_list = query(Album).all()
+    artist_list = query(Artist).all()
+    return render_template('albumTable.html', locationIndex=locationIndex, song_list=song_list, album_list = album_list, artist_list = artist_list)
 
 
 """@app.route('/search-by-location', methods=['GET'])
@@ -51,7 +56,7 @@ def locations():
 
 @app.route('/artist/<int:id>', methods=['GET'])
 def artist(id):
-    artistData = artistsData[int(id)]
+    artistData = query(Artist).filter(Artist.id == id)
     artistAlbums = getArtistAlbums(artistData["albums"])
     return render_template('artistPage.html', artistData=artistData, artistAlbums=artistAlbums, locationIndex=locationIndex)
 
@@ -64,7 +69,14 @@ def location(id):
 @app.route('/album/<int:id>', methods=['GET'])
 def album(id):
     return render_template('songPage.html', albumData=albumsData[id], locationIndex=locationIndex)
-
+    
+@app.route('/song/<int:id>', methods=['GET'])
+def song(id):
+    songID = query(Song).filter(Song.id == id).first()
+    artistID = query(Artist).filter(Artist.id == songID.artists[0].artist_id).first()
+    albumID = query(Album).filter(Album.id == songID.albums[0].album_id).first()
+    return render_template('songPage.html', songID= songID, artistID = artistID, albumID = albumID)
+    
 
 @app.route('/about', methods=['GET'])
 def about():

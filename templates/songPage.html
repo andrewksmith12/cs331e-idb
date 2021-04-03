@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>{{songData.name}}</title>
+    <title>{{songID.name}}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!-- Favicons -->
@@ -30,21 +30,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            locations
-                        </a>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for location in locationIndex %}
-                            <li><a class="dropdown-item" href="{{url_for('location',id=location.id)}}">{{location.name}}</a></li>
-                            {% endfor %}
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Browse All</a></li>
-                        </ul>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About</a>
                     </li>
@@ -55,7 +40,7 @@
                         <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
+                        <a class="nav-link" href="{{url_for('albums')}}">Venues</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -74,13 +59,13 @@
 		
         <div class="col-lg-7">
             <div class="card mb-3">
-                <img src="/static/img/{{songData.image}}" class="img-fluid" alt="photo of {{songData.name}}">
+                <img src="/static/img/{{songID.image}}" class="img-fluid" alt="photo of {{songID.name}}">
                 <div class="card-body">
-                  <h3 class="card-title">{{songData.name}}</h3>
-                  <p class="font-italic">{{songData.description}}
+                  <h3 class="card-title">{{songID.title}}</h3>
+                  <p class="font-italic">{{songID.description}}
 				  </p>
                     <p class="card-text"><small class="text-muted">
-						<ul>  <li>Album: {{songData.album}}</li><li>Artist: {{songData.artist}}</li> <li>Performing At: {{songData.location}}</li> </ul></small></p>
+						<ul>  <li>Album: {{albumID.title}}</li><li>Artist: {{artistID.name}}</li></ul></small></p>
                 </div>
             </div>
         </div>
@@ -90,7 +75,7 @@
                 <img src="../static/img/artists.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Related Music and Artists</h5>
-                    <p class="card-text"><ul> {% for item in songData.related %} <li>{{item}}</li> {% endfor %} </ul></p>
+                    <p class="card-text"><ul> {% for item in songID.related %} <li>{{item}}</li> {% endfor %} </ul></p>
                 </div>
             </div> 
         </div>
