@@ -27,7 +27,7 @@ r = requests.get(BASE_URL + 'playlists/' + playlistID, headers=auth_header, para
 data = r.json()
 
 artistList = []
-subprocess.run("pbcopy", universal_newlines=True, input=str(data['tracks']['items']))
+#subprocess.run("pbcopy", universal_newlines=True, input=str(data['tracks']['items']))
 
 #Get list of artists to process
 for song in data['tracks']['items']:
