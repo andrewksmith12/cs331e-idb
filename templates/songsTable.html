@@ -76,8 +76,8 @@
 			  </th>
 			  <th class="th-sm">Artist
 			  </th>
-			  <th class="th-sm">Performing At
-			  </th>
+			  <!-- <th class="th-sm">Performing At
+			  </th> -->
 			  <th class="th-sm">Release Date
 			  </th>
 			</tr>
@@ -90,7 +90,7 @@
 					<td><a href= "{{url_for('song', id = song.id)}}">{{song.title}} </a></td>
 					<td>{{album_list[song.albums[0].album_id].title}}</td>
 					<td>{{artist_list[song.artists[0].artist_id].name}}</td>
-					<td><a href="">Las Vegas</a></td>
+					<!-- <td><a href="">Las Vegas</a></td> -->
 					<td>2017</td>
 				</tr>
 
@@ -106,8 +106,8 @@
 			  </th>
 			  <th>Artist
 			  </th>
-			  <th>Performing At
-			  </th>
+			  <!-- <th>Genres
+			  </th> -->
 			  <th>Release Date
 			  </th>
 			</tr>
