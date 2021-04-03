@@ -1,3 +1,10 @@
 Flask==1.1.2
 flask_sqlalchemy
 requests
+psycopg2-binary
+Click
+Jinja2
+pep8
+SQLAlchemy
+gunicorn
+coverage
