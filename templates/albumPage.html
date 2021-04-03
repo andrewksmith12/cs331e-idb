@@ -59,14 +59,14 @@
 
         <div class="col-lg-7">
             <div class="card mb-3">
-                <img src="/static/img/{{albumData.image}}" class="img-fluid" alt="photo of {{albumData.name}}">
+                <img src="/static/img/{{albumID.image}}" class="img-fluid" alt="photo of {{albumID.name}}">
                 <div class="card-body">
-                    <h3 class="card-title">{{albumData.name}}</h3>
-                    <p class="font-italic">{{albumData.description}}
+                    <h3 class="card-title">{{albumID.title}}</h3>
+                    <p class="font-italic">{{artistID.name}}
                     </p>
                     <p class="card-text"><small class="text-muted">
-                            <h5>Tracks</h5>
-                            <ul> {% for item in songs %} <li>{{item.name}}</li> {% endfor %} </ul>
+                            <h5>Top Track: {{songID.title}}</h5>
+                            <!--<ul> {% for item in songs %} <li>{{item.name}}</li> {% endfor %} </ul>-->
                         </small></p>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Related Music and Artists</h5>
                     <p class="card-text">
-                        <ul> {% for item in albumData.related %} <li>{{item}}</li> {% endfor %} </ul>
+                        <ul> {% for item in albumID.related %} <li>{{item}}</li> {% endfor %} </ul>
                     </p>
                 </div>
             </div>

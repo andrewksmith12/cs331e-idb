@@ -68,7 +68,12 @@ def location(id):
 
 @app.route('/album/<int:id>', methods=['GET'])
 def album(id):
-    return render_template('songPage.html', albumData=albumsData[id], locationIndex=locationIndex)
+    albumID = query(Album).filter(Album.id == id).first()
+    songID = query(Song).filter(Song.id == albumID.songs[0].song_id).first()
+    artistID = query(Artist).filter(Artist.id == songID.artists[0].artist_id).first()
+    #artistID = query(Album).filter(Artist.id == albumID.artist).first()
+
+    return render_template('albumPage.html', albumID=albumID, artistID = artistID, songID = songID)
     
 @app.route('/song/<int:id>', methods=['GET'])
 def song(id):

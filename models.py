@@ -10,7 +10,7 @@ Base = declarative_base()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    'DB_STRING', 'postgresql://postgres:asmith99@localhost:5432/musicforyou')
+    'DB_STRING', 'postgresql://postgres:asd123@localhost:5432/musicforyou')
 # to suppress a warning message
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)

@@ -88,7 +88,7 @@
 				
 				<tr>
 					<td><a href= "{{url_for('song', id = song.id)}}">{{song.title}} </a></td>
-					<td>{{album_list[song.albums[0].album_id].title}}</td>
+					<td><a href= "{{url_for('album', id = song.albums[0].album_id)}}">{{album_list[song.albums[0].album_id].title}}</a></td>
 					<td>{{artist_list[song.artists[0].artist_id].name}}</td>
 					<!-- <td><a href="">Las Vegas</a></td> -->
 					<td>2017</td>
