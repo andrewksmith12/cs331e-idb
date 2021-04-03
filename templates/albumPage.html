@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Music For You - About</title>
+    <title>Music For You - Album</title>
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -59,13 +59,13 @@
 
         <div class="col-lg-7">
             <div class="card mb-3">
-                <img src="/static/img/{{albumID.thumbnail}}" class="img-fluid" alt="photo of {{albumID.name}}">
+                <img src="{{albumID.thumbnail}}" class="img-fluid" alt="photo of {{albumID.name}}">
                 <div class="card-body">
                     <h3 class="card-title">{{albumID.title}}</h3>
-                    <p class="font-italic">{{artistID.name}}
+                    <p class="font-italic">{{albumID.artist.name}}
                     </p>
                     <p class="card-text"><small class="text-muted">
-                            <h5>Top Track: {{songID.title}}</h5>
+                            <h5>Top Track: <a href="{{url_for('song',id=albumID.songs[0].song.id)}}">{{albumID.songs[0].song.title}}</a></h5>
                             <!--<ul> {% for item in songs %} <li>{{item.name}}</li> {% endfor %} </ul>-->
                         </small></p>
                 </div>

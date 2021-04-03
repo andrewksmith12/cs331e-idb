@@ -65,9 +65,9 @@
                   <p class="font-italic">{{songID.description}}
 				  </p>
                     <p class="card-text"><small class="text-muted">
-						<ul>  <li>Album: {{albumID.title}}</li><li>
+						<ul>  <li>Album: <a href="{{url_for('artist', id=albumID.id)}}">{{albumID.title}}</a></li><li>
                             Artist: 
-                            {{songID.artists[0].artist.name}}</li></ul></small></p>
+                            <a href="{{url_for('artist', id=songID.artists[0].artist.id)}}">{{songID.artists[0].artist.name}}</a></li></ul></small></p>
                 </div>
             </div>
         </div>

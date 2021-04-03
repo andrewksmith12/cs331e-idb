@@ -21,51 +21,37 @@
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{url_for('index')}}">Music For You</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            locations
-                        </a>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for location in locationIndex %}
-                            <li><a class="dropdown-item" href="{{url_for('location',id=location.id)}}">{{location.name}}</a></li>
-                            {% endfor %}
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Browse All</a></li>
-                        </ul>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('about')}}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('artists')}}">Artists</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{url_for('index')}}">Music For You</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('about')}}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('artists')}}">Artists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('albums')}}">Albums</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+        </nav>
+        <!-- Navbar End -->
     <div class="container">
         <h1>About Music For You</h1>
         <p>Music For You is a platform that connects you to the most popular music, artists, and the venues they're performing at.
@@ -123,9 +109,10 @@
             </p>
         </div>
         <h3>Data Sources</h3> 
-        <a href="">Data Source Links TBD</a>
+        <a href="https://www.billboard.com/charts/hot-100">Billboard.com's "Hot 100" Songs</a>
         <h3>Tools Used</h3> 
         <a href="https://getbootstrap.com/">Bootstrap</a>
+        <a href="https://developer.spotify.com/documentation/web-api/">Spotify API</a>
     </div>
 </body>
 

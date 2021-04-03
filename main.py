@@ -70,12 +70,7 @@ def location(id):
 @app.route('/album/<string:id>', methods=['GET'])
 def album(id):
     albumID = query(Album).filter(Album.id == id).first()
-    songsQuery = query(Song_Album).filter(Song_Album.album_id == id)
-    for song in songsQuery:
-        print(song.song_id)
-    #artistID = query(Album).filter(Artist.id == albumID.artist).first()
-
-    return render_template('albumPage.html', albumID=albumID, artistsList = artistsList, songID = songID)
+    return render_template('albumPage.html', albumID=albumID)
     
 @app.route('/song/<string:id>', methods=['GET'])
 def song(id):
