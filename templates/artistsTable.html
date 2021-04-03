@@ -64,7 +64,7 @@
             </div>
             <div class="col-lg-8 col-md-12 bg-custom">
                 <br>
-                <h3>Browse Songs by Artist</h3>
+                <h3>Browse Artists</h3>
                 <!--table -->
                 <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
                     <thead>
@@ -75,20 +75,20 @@
                             </th> -->
                             <th class="th-sm">Top Song
                             </th>
-                            <th class="th-sm">Origin
-                            </th>
-                            <th class="th-sm">Release Year
-                            </th>
+                            <!-- <th class="th-sm">Origin
+                            </th> -->
+                            <!-- <th class="th-sm">Release Year
+                            </th> -->
                         </tr>
                     </thead>
                     <tbody>
                         {% for artist in artist_list %}
                         <tr>
-                            <td><a href="{{url_for('artist', id = artist.id)}}">{{artist.title}}</a></td>
+                            <td><a href="{{url_for('artist', id = artist.id)}}">{{artist.name}}</a></td>
                             <!-- <td><a href="/LOCATION">New York</a></td> -->
-                            <td>TEXT</td>
-                            <td>Sydney, Australia</td>
-                            <td>1973</td>
+                            <td><a href="{{url_for('song', id = artist.songs[0].song.id)}}">{{artist.songs[0].song.title}}</a></td>
+                            <!-- <td>Sydney, Australia</td> -->
+                            <!-- <td>1973</td> -->
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -100,10 +100,10 @@
                             </th> -->
                             <th class=>Top Song
                             </th>
-                            <th class=>Origin
+                            <!-- <th class=>Origin
                             </th>
                             <th class=>Release Year
-                            </th>
+                            </th> -->
                         </tr>
                     </tfoot>
                 </table>

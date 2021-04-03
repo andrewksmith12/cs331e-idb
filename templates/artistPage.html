@@ -29,21 +29,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            locations
-                        </a>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for location in locationIndex %}
-                            <li><a class="dropdown-item" href="{{url_for('location',id=location.id)}}">{{location.name}}</a></li>
-                            {% endfor %}
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Browse All</a></li>
-                        </ul>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About</a>
                     </li>
@@ -54,7 +39,7 @@
                         <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
+                        <a class="nav-link" href="{{url_for('albums')}}">Venues</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -73,13 +58,13 @@
 		
         <div class="col-lg-7">
             <div class="card mb-3">
-                <img src="/static/img/{{artistData.image}}" class="img-fluid" alt="photo of {{artistData.name}}">
+                <img src="{{artistData.thumbnail}}" class="img-fluid" alt="photo of {{artistData.name}}">
                 <div class="card-body">
                   <h3 class="card-title">{{artistData.name}}</h3>
                   <p class="font-italic">{{artistData.description}}
 				  </p>
                     <p class="card-text"><small class="text-muted"><h5>Discography</h5>
-						<ul> {% for item in artistAlbums %} <li>{{item.name}}</li> {% endfor %} </ul></small></p>
+						<ul> {% for item in artistAlbums %} <li>{{item.title}}</li> {% endfor %} </ul></small></p>
                 </div>
             </div>
         </div>

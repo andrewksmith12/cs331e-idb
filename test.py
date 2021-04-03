@@ -5,7 +5,7 @@ import requests
 db.drop_all()
 
 class TestApplication(TestCase):
-    def test1(self):
+    def APItest1(self):
         #Ensure API authentication is working
         CLIENT_ID = "adcb7fe6a96a4e4db325d9c5440b0419"
         CLIENT_SECRET = "51eaeca06fae4f0383bf7b298d7c3773"
@@ -17,7 +17,7 @@ class TestApplication(TestCase):
         })
         self.assertEqual(auth_response.status_code, '200')
 
-    def test2(self):
+    def APItest2(self):
         CLIENT_ID = "adcb7fe6a96a4e4db325d9c5440b0419"
         CLIENT_SECRET = "51eaeca06fae4f0383bf7b298d7c3773"
         AUTH_URL = "https://accounts.spotify.com/api/token"
@@ -36,6 +36,28 @@ class TestApplication(TestCase):
                         headers=auth_header, params={'market': 'US'})
         data = r.json()
         self.assertEqual(data['name'],"Arioid")
+
+    def APItest3(self):
+        CLIENT_ID = "adcb7fe6a96a4e4db325d9c5440b0419"
+        CLIENT_SECRET = "51eaeca06fae4f0383bf7b298d7c3773"
+        AUTH_URL = "https://accounts.spotify.com/api/token"
+        BASE_URL = 'https://api.spotify.com/v1/'
+        auth_response = requests.post(AUTH_URL, {
+            'grant_type': 'client_credentials',
+            'client_id': CLIENT_ID,
+            'client_secret': CLIENT_SECRET,
+        })
+        access_token = auth_response.json()['access_token']
+        auth_header = {
+            'Authorization': 'Bearer {token}'.format(token=access_token)
+        }
+        test_artist_uri = '1ad0OVCVHS0twEyPoRHNkR'
+        r = requests.get(BASE_URL + 'artists/' + test_artist_uri,
+                        headers=auth_header, params={'market': 'US'})
+        data = r.json()
+        self.assertEqual(data['type'],"artist")
+
+
     def testArtist1(self):
         testArtist = Artist(name="Darius Rucker", id=1)
         db.session.add(testArtist)
@@ -54,21 +76,41 @@ class TestApplication(TestCase):
         r = db.session.query(Artist).filter(id=1).one()
         self.assertEqual(str(r.id), '3')
         self.assertEqual(str(r.name), 'John Rucker')
+
     def testSong1(self):
         testSong = Song(title="Bow Chicka Bow Wow", id=5)
         db.session.add(testSong)
         r = db.session.query(Song).filter(id=5).one()
         self.assertEqual(str(r.id), '5')
-        self.assertEqual(str(r.name), 'Bow Chicka Bow Wow')
+        self.assertEqual(str(r.title), 'Bow Chicka Bow Wow')
     def testSong2(self):
         testSong = Song(title="Bow Bow Chica Wow", id=8)
         db.session.add(testSong)
         r = db.session.query(Song).filter(id=8).one()
         self.assertEqual(str(r.id), '8')
-        self.assertEqual(str(r.name), 'Bow Bow Chica Wow')
+        self.assertEqual(str(r.title), 'Bow Bow Chica Wow')
     def testSong3(self):
         testSong = Song(title="Chica Chica Bow Wow", id=12)
         db.session.add(testSong)
         r = db.session.query(Song).filter(id=12).one()
         self.assertEqual(str(r.id), '12')
-        self.assertEqual(str(r.name), 'Chica Chica Bow Wow')
+        self.assertEqual(str(r.title), 'Chica Chica Bow Wow')
+
+    def testAlbum1(self):
+        testAlbum = Album(title="Hello Album", id=80)
+        db.session.add(testAlbum)
+        r = db.session.query(Song).filter(id=80).one()
+        self.assertEqual(str(r.id), '80')
+        self.assertEqual(str(r.title), 'Hello Album')
+    def testAlbum2(self):
+        testAlbum = Album(title="Hello World", id=81)
+        db.session.add(testAlbum)
+        r = db.session.query(Song).filter(id=81).one()
+        self.assertEqual(str(r.id), '81')
+        self.assertEqual(str(r.title), 'Hello Album')
+    def testAlbum3(self):
+        testAlbum = Album(title="Hello World Album", id=82)
+        db.session.add(testAlbum)
+        r = db.session.query(Song).filter(id=82).one()
+        self.assertEqual(str(r.id), '82')
+        self.assertEqual(str(r.title), 'Hello Album')

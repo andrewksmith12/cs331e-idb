@@ -82,10 +82,10 @@
                     </tr>
                 </thead>
                 <tbody>
-					
+					{{% for album in album_list %}}
                     <tr>
-                        <td><a href="{{url_for('artist',id=2)}}">AC/DC</a></td>
-                        <td><a href="{{url_for('artist',id=2)}}">New York</a></td>
+                        <td><a href="{{url_for('album',id=album.id)}}">{{album.title}}</a></td>
+                        <td><a href="{{url_for('artist',id=album.)}}">New York</a></td>
                         <td>Highway to Hell</td>
                         <td>Sydney, Australia</td>
                         <td>1973</td>

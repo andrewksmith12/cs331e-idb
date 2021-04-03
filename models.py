@@ -33,29 +33,30 @@ song_album_table = Table('song_to_album', Base.metadata,
 
 class Song_Artist(db.Model):
     __tablename__ = 'song_to_artist'
-    artist_id = Column(Integer, ForeignKey('artist.id'), primary_key=True)
-    song_id = Column(Integer, ForeignKey('song.id'), primary_key=True)
+    artist_id = Column(db.String(30), ForeignKey('artist.id'), primary_key=True)
+    song_id = Column(db.String(30), ForeignKey('song.id'), primary_key=True)
     artist = relationship("Artist", back_populates="songs")
     song = relationship("Song", back_populates="artists")
 
 
+
 class Song_Album(db.Model):
     __tablename__ = 'song_to_album'
-    album_id = Column(Integer, ForeignKey('album.id'), primary_key=True)
-    song_id = Column(Integer, ForeignKey('song.id'), primary_key=True)
+    album_id = Column(db.String(30), ForeignKey('album.id'), primary_key=True)
+    song_id = Column(db.String(30), ForeignKey('song.id'), primary_key=True)
     album = relationship("Album", back_populates="songs")
     song = relationship("Song", back_populates="albums")
+
 
 
 class Artist(db.Model):
     # Artist has two primary attributes, ID and name
 
     __tablename__ = 'artist'
-
     name = Column(db.String(140), nullable=False)
-    id = Column(Integer, primary_key=True)
+    id = Column(db.String(30), primary_key=True)
     songs = relationship("Song_Artist", back_populates="artist")
-    thumbnail = Column(db.String(80))
+    thumbnail = Column(db.String(200))
 
 
 class Song(db.Model):
@@ -64,20 +65,18 @@ class Song(db.Model):
     __tablename__ = 'song'
 
     title = Column(db.String(140), nullable=False)
-    id = Column(Integer, primary_key=True)
+    id = Column(db.String(30), primary_key=True)
     artists = relationship("Song_Artist", back_populates="song")
     albums = relationship("Song_Album", back_populates="song")
+    release_date = Column(db.String(60))
+    thumbnail = Column(db.String(200))
 
 
 class Album(db.Model):
     # Album also has two primary attributes, ID and name
 
     __tablename__ = 'album'
-
     title = Column(db.String(140), nullable=False)
-    id = Column(Integer, primary_key=True)
+    id = Column(db.String(30), primary_key=True)
     songs = relationship("Song_Album", back_populates="album")
-
-
-db.drop_all()
-db.create_all()
+    thumbnail = Column(db.String(200))

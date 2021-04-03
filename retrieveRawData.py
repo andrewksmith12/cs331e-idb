@@ -47,7 +47,6 @@ for i in data["tracks"]:
 
 tracks = []
 for artistKey in artists.keys():
-
     r = requests.get(BASE_URL + 'artists/' + artistKey +
                      "/top-tracks/", headers=auth_header, params={'market': 'US'})
     data = r.json()
