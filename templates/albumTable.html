@@ -74,47 +74,29 @@
                         </th>
                         <th class="th-sm">Top Song
                         </th>
-                        <th class="th-sm">Features
-                        </th>
                         <th class="th-sm">Release Date
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-					{{% for album in album_list %}}
+					{% for album in album_list %}
                     <tr>
                         <td><a href="{{url_for('album',id=album.id)}}">{{album.title}}</a></td>
-                        <td><a href="{{url_for('artist',id=album.)}}">New York</a></td>
-                        <td>Highway to Hell</td>
-                        <td>Sydney, Australia</td>
-                        <td>1973</td>
+                        <td><a href="{{url_for('artist',id=album.artist.id)}}">{{album.artist.name}}</a></td>
+                        <td><a href="{{url_for('song',id=album.songs[0].song.id)}}">{{album.songs[0].song.title}}</td>
+                        <td>{{album.songs[0].song.release_date}}</td>
                     </tr>
-                    <tr>
-                        <td><a href="{{url_for('artist',id=0)}}">Brockhampton</a></td>
-                        <td><a href="{{url_for('artist',id=2)}}">New York</a></td>
-                        <td>Sugar</td>
-                        <td>San Marcos, Texas</td>
-                        <td>2010</td>
-                    </tr>
-                    <tr>
-                        <td><a href="{{url_for('artist',id=1)}}">Taylor Swift</a></td>
-                        <td><a href="{{url_for('artist',id=2)}}">New York</a></td>
-                        <td>Willow</td>
-                        <td>West Reading, Pennsylvania</td>
-                        <td>2020</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th class=>Artist Name
+                        <th class="th-sm">Album Name
                         </th>
-                        <th class=>Performing At
+                        <th class="th-sm">Artist
                         </th>
-                        <th class=>Top Song
+                        <th class="th-sm">Top Song
                         </th>
-                        <th class=>Origin
-                        </th>
-                        <th class=>Release Year
+                        <th class="th-sm">Release Date
                         </th>
                     </tr>
                 </tfoot>

@@ -80,3 +80,5 @@ class Album(db.Model):
     id = Column(db.String(30), primary_key=True)
     songs = relationship("Song_Album", back_populates="album")
     thumbnail = Column(db.String(200))
+    artist = relationship("Artist")
+    artistID = Column(db.String(30), ForeignKey(Artist.id))

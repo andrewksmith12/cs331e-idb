@@ -69,7 +69,8 @@ for artist in artistList:
                 print("Start Song-Artist Rel: artist:"+song['id']+" artist: "+artist['id'])
                 Song_Artist(artist_id=dbArtist.id, song_id=newSong.id, artist=dbArtist, song=newSong)
             if song['album']['id'] not in albumsCreated:
-                newAlbum = Album(id=song['album']['id'], title=song['album']['name'], thumbnail=song['album']['images'][0]['url'])
+                dbArtist = db.session.query(Artist).filter(Artist.id==artist['id']).first()
+                newAlbum = Album(id=song['album']['id'], title=song['album']['name'], thumbnail=song['album']['images'][0]['url'], artistID=artist['id'], artist=dbArtist)
                 albumsCreated.append(song['album']['id'])
                 db.session.add(newAlbum)
             album = db.session.query(Album).filter(Album.id==song['album']['id']).first()

@@ -64,7 +64,7 @@
                   <p class="font-italic">{{artistData.description}}
 				  </p>
                     <p class="card-text"><small class="text-muted"><h5>Discography</h5>
-						<ul> {% for item in artistAlbums %} <li>{{item.title}}</li> {% endfor %} </ul></small></p>
+						<ul> {% for item in artistAlbums %} <li><a href="{{url_for('album', id=item.id)}}">{{item.title}}</a></a></li> {% endfor %} </ul></small></p>
                 </div>
             </div>
         </div>
