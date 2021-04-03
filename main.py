@@ -35,7 +35,8 @@ def artists():
 @app.route('/search-by-song', methods=['GET'])
 def songs():
     song_list = query(Song).all()
-    return render_template('songsTable.html', locationIndex=locationIndex, song_list=song_list)
+    album_list = query(Album).all()
+    return render_template('songsTable.html', locationIndex=locationIndex, song_list=song_list, album_list = album_list)
     
 @app.route('/search-by-album', methods=['GET'])
 def albums():

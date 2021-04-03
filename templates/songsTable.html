@@ -35,21 +35,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            locations
-                        </a>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for location in locationIndex %}
-                            <li><a class="dropdown-item" href="{{url_for('location',id=location.id)}}">{{location.name}}</a></li>
-                            {% endfor %}
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Browse All</a></li>
-                        </ul>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About</a>
                     </li>
@@ -60,7 +45,7 @@
                         <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
+                        <a class="nav-link" href="{{url_for('albums')}}">Albums</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -98,25 +83,37 @@
 			</tr>
 		  </thead>
 		  <tbody>
+				{% for song in song_list %}
+		
+				
+				<tr>
+					<td>{{song.title}}</td>
+					<td>{{song.albums[0].id}}</td>
+					<td><a href="{{url_for('artist',id=0)}}">Brockhampton</a></td>
+					<td><a href="{{url_for('artist',id=0)}}">Las Vegas</a></td>
+					<td>2017</td>
+				</tr>
+
+				{% endfor %}
 			<tr>
 				<td>Rentals</td>
 				<td>Saturation III</td>
                 <td><a href="{{url_for('artist',id=0)}}">Brockhampton</a></td>
-                <td><a href="{{url_for('location',id=5)}}">Las Vegas</a></td>
+                <td><a href="{{url_for('artist',id=0)}}">Las Vegas</a></td>
 				<td>2017</td>
 			</tr>
 			<tr>
 				<td>Back in Black</td>
 				<td>Back in Black</td>
                 <td><a href="{{url_for('artist',id=2)}}">AC/DC</a></td>
-                <td><a href="{{url_for('location',id=6)}}">New York</a></td>
+                <td><a href="{{url_for('artist',id=0)}}">Las Vegas</a></td>
 				<td>1980</td>
 			</tr>
 			<tr>
 				<td>willow</td>
 				<td>evermore</td>
                 <td><a href="{{url_for('artist',id=1)}}">Taylor Swift</a></td>
-                <td><a href="{{url_for('location',id=0)}}">Austin</a></td>
+                <td><a href="{{url_for('artist',id=0)}}">Las Vegas</a></td>
 				<td>2020</td>
 			</tr>
 
