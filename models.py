@@ -10,7 +10,7 @@ Base = declarative_base()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    'DB_STRING', 'postgresql://postgres:asd123@localhost:5432/musicforyou')
+    'DB_STRING', 'postgresql://postgres:musicforyou-db@35.226.95.81/postgres')
 # to suppress a warning message
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -47,7 +47,19 @@ class Song_Album(db.Model):
     album = relationship("Album", back_populates="songs")
     song = relationship("Song", back_populates="albums")
 
+class Genre_Artist(db.Model):
+    __tablename__ = 'genre_to_artist'
+    artist_id = Column(db.String(30), ForeignKey('artist.id'), primary_key=True)
+    genre_name = Column(db.String(140), ForeignKey('genre.name'), primary_key=True)
+    artist = relationship("Artist", back_populates="genres")
+    genre = relationship("Genre", back_populates="artists")
 
+class Genre(db.Model):
+    # Artist has two primary attributes, ID and name
+
+    __tablename__ = 'genre'
+    name = Column(db.String(140), primary_key=True)
+    artists = relationship("Genre_Artist", back_populates="genre")
 
 class Artist(db.Model):
     # Artist has two primary attributes, ID and name
@@ -57,6 +69,8 @@ class Artist(db.Model):
     id = Column(db.String(30), primary_key=True)
     songs = relationship("Song_Artist", back_populates="artist")
     thumbnail = Column(db.String(200))
+    genres = relationship("Genre_Artist", back_populates="artist")
+
 
 
 class Song(db.Model):
@@ -82,3 +96,8 @@ class Album(db.Model):
     thumbnail = Column(db.String(200))
     artist = relationship("Artist")
     artistID = Column(db.String(30), ForeignKey(Artist.id))
+
+
+
+
+

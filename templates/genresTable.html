@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>Music For You - Artists</title>    
+        <title>Music For You - Genres</title>    
         <!-- Favicons -->
         <link href="assets/img/favicon.png" rel="icon">
         <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -13,7 +13,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet">    
         <!-- CSS Files -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.css" />
         <link href="../static/styles/styles.css" rel="stylesheet">
         <!-- JS Files -->
@@ -35,21 +34,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            locations
-                        </a>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for location in locationIndex %}
-                            <li><a class="dropdown-item" href="{{url_for('location',id=location.id)}}">{{location.name}}</a></li>
-                            {% endfor %}
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Browse All</a></li>
-                        </ul>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">About</a>
                     </li>
@@ -60,7 +44,7 @@
                         <a class="nav-link" href="{{url_for('songs')}}">Songs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('locations')}}">Venues</a>
+                        <a class="nav-link" href="{{url_for('albums')}}">Albums</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -73,56 +57,64 @@
     <!-- Navbar End -->
 
     <!-- Main Infobox -->
-    <div class="row">
-
-        <div class="col-md-2 col-md-0">
-        </div>
-        <div class="col-lg-8 col-md-12 bg-custom">
+        <div class="row">
             <br>
-            <h3>Browse Locations</h3>
-
-            <!--table -->
-            <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th class="th-sm">Performing At
-                        </th>
-                        <th class="th-lg">Description
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="{{url_for('location',id=0)}}">Austin</a></td>
-                        <td>A great city with a great university</td>
-                    </tr>
-                    <tr>
-                        <td><a href="{{url_for('location',id=6)}}">New York</a></td>
-                        <td>Concrete jungle where dreams are made of!</td>
-                    </tr>
-                    <tr>
-                        <td><a href="{{url_for('location',id=5)}}">Las Vegas</a></td>
-                        <td>Vegas, Baby! Listen to some music as you gamble</td>
-                    </tr>
-
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th >Preforming At
-                        </th>
-                        <th >Description
-                        </th>
-                    </tr>
-                </tfoot>
-            </table>
-
-
-            <!--table end-->
+            <div class="col-md-2 col-md-0">
+            </div>
+            <div class="col-lg-8 col-md-12 bg-custom">
+                <br>
+                <h3>Browse Genres</h3>
+                <!--table -->
+                <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="th-sm">Genre Name
+                            </th>
+                            <!-- <th class="th-sm">Performing At
+                            </th> -->
+                            <th class="th-sm">Matching Artists
+                            </th>
+                            <!-- <th class="th-sm">Origin
+                            </th> -->
+                            <!-- <th class="th-sm">Release Year
+                            </th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for genre in genresList %}
+                        <tr>
+                            <td><a href="{{url_for('genre', name=genre.name)}}">{{genre.name}}</a></td>
+                            <!-- <td><a href="/LOCATION">New York</a></td> -->
+                            <td>
+                            {% for artist in genre.artists %}
+                            <p><a href="{{url_for('artist', id = artist.artist.id)}}">{{artist.artist.name}}, </a>
+                            {% endfor %}</td>
+                            <!-- <td>Sydney, Australia</td> -->
+                            <!-- <td>1973</td> -->
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th class=>Artist Name
+                            </th>
+                            <!-- <th class=>Performing At
+                            </th> -->
+                            <th class=>Top Song
+                            </th>
+                            <!-- <th class=>Origin
+                            </th>
+                            <th class=>Release Year
+                            </th> -->
+                        </tr>
+                    </tfoot>
+                </table>
+                <br><br><br><br>
+                <!--table end-->
+            </div>
+            <div class="col-md-2 col-md-0">
+            </div>
         </div>
-        <div class="col-md-2 col-md-0">
-        </div>
-
-
     </div>
 
 
