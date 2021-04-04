@@ -25,14 +25,15 @@ auth_header = {
 playlistID = '6UeSakyzhiEt4NB3UAd6NQ'
 spotifyUS50 = '37i9dQZEVXbLRQDuF5jeBp'
 UKtop40 = '4OIVU71yO7SzyGrh0ils2i'
-r = requests.get(BASE_URL + 'playlists/' + playlistID, headers=auth_header, params={'market': 'US'})
-data = r.json()
+
 
 artistList = []
 #subprocess.run("pbcopy", universal_newlines=True, input=str(data['tracks']['items']))
 
 #Get list of artists to process
 def processPlaylist(playlistID):
+    r = requests.get(BASE_URL + 'playlists/' + playlistID, headers=auth_header, params={'market': 'US'})
+    data = r.json()
     for song in data['tracks']['items']:
         for artist in song['track']['album']['artists']:
             if artist['id'] not in artistList:
@@ -87,7 +88,9 @@ albumsCreated = []
 songsCreated = []
 errorSongs = []
 processPlaylist(playlistID)
+artistList.clear()
 processPlaylist(spotifyUS50)
+artistList.clear()
 processPlaylist(UKtop40)
 db.session.commit()
 print("Commit Done!")
