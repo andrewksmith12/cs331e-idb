@@ -1,0 +1,658 @@
+commit 53d26827b4fe71cda97bf7dd88b265b2b2dd0e6a
+Author: Leif <leifkthomas@utexas.edu>
+Date:   Sat Apr 3 20:05:29 2021 -0500
+
+    Pydoc
+
+commit 2351483f07d926713b89f5865024220e369068ec
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 18:16:57 2021 -0500
+
+    Updates some links on pages, getting ready to try uploading to gcp
+
+commit 5ef3ef37147f372657575cc61cc5cf33596677a4
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 18:04:49 2021 -0500
+
+    update models, update album and song pages
+
+commit 68e18eab806d0564008aca7112133a533544a1fa
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 17:49:04 2021 -0500
+
+    artistsTable updated
+
+commit eda02c2701e34e8f36ec695b430aa8155279f6dc
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Sat Apr 3 16:37:59 2021 -0500
+
+    fixed table pagination issue
+
+commit e994e47ff90e17b1fc002cbc0f0d0f8c7bece5b7
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 16:35:02 2021 -0500
+
+    update so windows users can run
+
+commit 6b2e18114929f7ee7a9f41f366340208ec42c147
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 16:25:50 2021 -0500
+
+    update API connection, fix songs table
+
+commit 1829088c295c4e749306849eb4791caa03d03106
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 16:01:44 2021 -0500
+
+    update song pages
+
+commit dd4a166d7e281958d0f604aa08f77682c927611b
+Merge: 437182a 780a371
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 15:50:38 2021 -0500
+
+    Merge branch 'master' of gitlab.com:perryascott2/cs331e-idb
+    FORCE COMMIT
+
+commit 437182a2250efc1afb3d18a43dba3673190857fb
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 15:50:26 2021 -0500
+
+    Update API connection, update some pages, pushing for collaboration
+
+commit 780a371f9d8a98efd1a55d11b2a2ae6285603029
+Author: OriginalLeaf <leifkthomas@gmail.com>
+Date:   Sat Apr 3 14:20:40 2021 -0500
+
+    Phase 2 Technical Report
+
+commit 75a174d5917e1b966c11155b86b52fb09f6b3211
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Fri Apr 2 21:51:07 2021 -0500
+
+    album page link added to songs table
+
+commit c5b12ae977a7b9caec52c0e3ffc1e0be52fcf304
+Merge: 005c369 3747f71
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Apr 2 21:06:50 2021 -0500
+
+    Merge branch 'master' of gitlab.com:perryascott2/cs331e-idb
+    MERGE CONFLICT FROM CI, RESOLVING
+
+commit 005c369da1bd4be58dffc0e429e56e2b231717e1
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Apr 2 21:05:53 2021 -0500
+
+    pushing, changes
+
+commit 3747f71b9da0ca4bbf88dadcfa6fad218483fd70
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 01:43:55 2021 +0000
+
+    Add CI yml
+
+commit 5c39ee6ca870a97d67ec9cd2403e4db6e5efbe9a
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Apr 2 20:39:55 2021 -0500
+
+    add some tests, let's see if they work
+
+commit f96cbd4bfe91aaa0fbf4d1a0fbac6009e60d4bb3
+Merge: 1fe80ad 746c62b
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Fri Apr 2 20:27:37 2021 -0500
+
+    Merge branch 'master' of https://gitlab.com/perryascott2/cs331e-idb into master
+    conflict between main.py files
+
+commit 1fe80adb179d91098fee082a83c84e2cfb9e6841
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Fri Apr 2 20:25:37 2021 -0500
+
+    song names in song table go to individual pages with their data on song, album, and artist
+
+commit 746c62bed7821d841d3f741afedd779b74e95345
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Apr 2 19:21:47 2021 -0500
+
+    update app and req
+
+commit ac5cf7fd577bbf4afda782a8cba895e4f48dd984
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Fri Apr 2 19:20:55 2021 -0500
+
+    began adding db functionaity to tables
+
+commit 646bd7fbac9709a71dbb2c6401de1854723127ac
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Fri Apr 2 18:50:48 2021 -0500
+
+    changed locations to albums, update albums and index html
+
+commit 553bc84cc437fcae2b575b0c2fe33933543809e6
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Fri Apr 2 15:37:31 2021 -0500
+
+    Connnected data json to database
+
+commit 3218c06688ec72e014256ba9c12b069aae0a2bf7
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Fri Apr 2 14:34:54 2021 -0500
+
+    Finished retrieveRawData to output to json data file
+
+commit 762792a55bd488641bd96c979e00c97778c47dca
+Merge: b93fc76 b5118d0
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Fri Apr 2 13:54:00 2021 -0500
+
+    Merge branch 'master' of https://gitlab.com/perryascott2/cs331e-idb
+
+commit b93fc763a5c6ac8ddb88a71e3f8a8514e2ef2ae5
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Fri Apr 2 13:53:40 2021 -0500
+
+    Fixed db to actually load
+
+commit b5118d0468034c47ccd981d843e24e1269805a6c
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Apr 2 11:17:28 2021 -0500
+
+    update requirements, add AKSSpotify code
+
+commit 399b4a5a3159aa7cf95e0e0f7e346a083469fba3
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 23:11:59 2021 -0500
+
+    Deleted pycache
+
+commit f9628418408b0c051cbf02208b04ca04e0c38647
+Merge: 3bcd7e8 8145ef5
+Author: Travis A <travis.aelvoet@gmail.com>
+Date:   Fri Apr 2 04:07:40 2021 +0000
+
+    Merge branch 'dbDev' into 'master'
+    
+    Fixing up db setup errors
+    
+    See merge request perryascott2/cs331e-idb!4
+
+commit 8145ef58aab40b8b1303dadd731965e3dc20343b
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 22:56:33 2021 -0500
+
+    Fixing up db setup errors
+
+commit 3bcd7e84cb3e888a39811253a94ac2763d45a0ce
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Thu Apr 1 22:34:08 2021 -0500
+
+    update app.yaml
+
+commit 288afe3500281a139aa879a2f92af6a11c76fcae
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 20:45:33 2021 -0500
+
+    Fixed encoding on raw data retriever
+
+commit 5c4ed173f7d0941c439877d772070b28eab63027
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Thu Apr 1 18:47:05 2021 -0500
+
+    reatrieveRawData uses Spotify API to scrape billboard 100
+
+commit 26e8ca97054490993492feec0baadff9e33eb8c2
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 15:01:50 2021 -0500
+
+    Updated data.json and schema
+
+commit 880f99bc43aa5a06558398ebbf7e648d2d94d123
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 14:12:02 2021 -0500
+
+    Added create_db.py
+
+commit 35b0992f4f82774042b98965add3ea52d9dd7699
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 13:37:47 2021 -0500
+
+    Fixed relationship structure to artists-songs-albums instead of artists-albums-songs
+
+commit 4f46ee0897a27e3a1eef71e485955d3495fa96be
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 11:42:41 2021 -0500
+
+    Forgot to import Base
+
+commit 6a9bddaa52338e3a7f497d8bf5ce5a101afd7e7a
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 11:35:46 2021 -0500
+
+    Created models.py
+
+commit c0a9a208fc062beedfc000df15ecd35c710fb111
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 10:53:58 2021 -0500
+
+    Added a list of required tables 2
+
+commit a7497360e329f61593fa9586dbdc127f8098857d
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Apr 1 10:52:24 2021 -0500
+
+    Added a list of required tables
+
+commit bad20d6b12037ce52cb721b53e28e23f75a93ded
+Author: annguyen32 <annnguyen32@gmail.com>
+Date:   Wed Mar 31 23:06:22 2021 -0500
+
+     javascript file of google location
+
+commit eca1702a4c7acf795e29a0e3e6be909f4fbde9cc
+Author: annguyen32 <annnguyen32@gmail.com>
+Date:   Wed Mar 31 23:05:21 2021 -0500
+
+    show google map of user locaiton
+
+commit d101d58ff60bd8a880af8c81ae591e6bb008a665
+Author: annguyen32 <annnguyen32@gmail.com>
+Date:   Wed Mar 31 21:55:15 2021 -0500
+
+    new file
+
+commit b092137581a7e296ac1f50d3d7b4901e3ef2d95d
+Merge: 96489b6 1cd5e5e
+Author: Leif Thomas <leifkthomas@utexas.edu>
+Date:   Fri Feb 26 21:39:58 2021 -0600
+
+    Merge branch 'master' of https://gitlab.com/perryascott2/cs331e-idb
+
+commit 96489b64f0cb2ded1e9db1afeeae8d79d33efc3a
+Author: Leif Thomas <leifkthomas@utexas.edu>
+Date:   Fri Feb 26 21:39:53 2021 -0600
+
+    Technical Report Added after Revisions
+
+commit 1cd5e5e7e7ea54eb54ff065597f0181b9d873ab4
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 21:34:30 2021 -0600
+
+    Final Commit for tonight, hopefully. Updated location links
+
+commit 713e6fdb850d08f1dafdea437be0f165541e44a3
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 20:57:55 2021 -0600
+
+    update style. all the style.
+
+commit ca57aedd2bce008b20727d715da8466b82557a25
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 20:25:57 2021 -0600
+
+    update navbar, update index layout
+
+commit 26333155453feb9c24e8462021cb55ba9984cc03
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 19:46:21 2021 -0600
+
+    Update homepage, update locations
+
+commit 9fc1af86d6b920e114a2c8fa4d87e7147fd89144
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 19:34:27 2021 -0600
+
+    update the locations references
+
+commit 7ab094c40710f86ac221f60c98b664ecd233eef9
+Merge: b35509d 984122f
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 19:23:54 2021 -0600
+
+    Merge branch 'master' of gitlab.com:perryascott2/cs331e-idb
+
+commit b35509da6f36cf51f0d9cb62b8cf7b34e1c8e98c
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 19:23:49 2021 -0600
+
+    update home page
+
+commit 984122fb7280060d690a2400778fe0c2eedf6410
+Merge: 49582a5 598875e
+Author: Leif Thomas <leifkthomas@utexas.edu>
+Date:   Fri Feb 26 19:22:30 2021 -0600
+
+    Merge branch 'master' of https://gitlab.com/perryascott2/cs331e-idb
+
+commit 49582a51cb562a6ba8508ce966122c3063b2ff95
+Author: Leif Thomas <leifkthomas@utexas.edu>
+Date:   Fri Feb 26 19:22:24 2021 -0600
+
+    Changed Genres to Locations
+
+commit 598875e63f795d34367d6f36ecc918de02b997a0
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 19:07:33 2021 -0600
+
+    About page is done. She's not the prettiest, but we can work on that later.
+
+commit fbfa91e64e98000a9a98e0a2a1c49ad7fa85e58f
+Merge: d41dda1 e89d253
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 18:56:59 2021 -0600
+
+    Merge branch 'master' of gitlab.com:perryascott2/cs331e-idb
+
+commit d41dda19a295ca9e09061d8e6bc3a1dd6d3e7b67
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 18:56:54 2021 -0600
+
+    update aks about
+
+commit e89d2537159f530d8cdb1edb183f5b3ef2835518
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Fri Feb 26 18:32:27 2021 -0600
+
+    added perry to about page
+
+commit 9c2065dff6268e2c2ca45b88f23f050018b64445
+Merge: f8e0456 603cf5c
+Author: Leif Thomas <leifkthomas@utexas.edu>
+Date:   Fri Feb 26 18:26:33 2021 -0600
+
+    Merge branch 'master' of https://gitlab.com/perryascott2/cs331e-idb
+
+commit 603cf5c5342c2a68c22001c074de5e402f247bd5
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 18:25:52 2021 -0600
+
+    update some about formatting data, add update link for sort.js on the new genres page
+
+commit 280c0c7bf29cce45c06303759b6d379b95fd9ce9
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Fri Feb 26 18:21:22 2021 -0600
+
+    created genresTable.html
+
+commit ee7a5e78e530c8d7e460406d094758cf4509c6fe
+Merge: eae522f dee60a4
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 18:02:37 2021 -0600
+
+    resolve merge
+
+commit eae522f095fdbc2ec3dfa75b702deaafef9b149e
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 18:00:33 2021 -0600
+
+    data.json, artistTable, songsTable
+
+commit dee60a44b065bc6db6ec09ed87adea099b52f619
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Fri Feb 26 17:59:35 2021 -0600
+
+    added songPage.html and genrePage.html
+
+commit a91e9cbb618f5c5a47c9e810d7a40576038c7a22
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Fri Feb 26 16:50:47 2021 -0600
+
+    Update about page for compliance with guidelines
+
+commit f8e0456e094f4ad2f66565449d7f0f66126e1531
+Author: Leif Thomas <leifkthomas@utexas.edu>
+Date:   Fri Feb 26 11:49:30 2021 -0600
+
+    Added Leif's Bio
+
+commit f6dfd661acf3246223d1d74b446c779969c711b9
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Feb 25 23:33:14 2021 -0600
+
+    Updated about page
+
+commit 13363759a689bb1231a919fc947f17643dbe030b
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Thu Feb 25 23:01:56 2021 -0600
+
+    update about link to be dynamic, updated references
+
+commit 9987f345d45efba3ae559faeb8ee49a3a0a2be56
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Thu Feb 25 22:35:28 2021 -0600
+
+    fix boilerplate link issue
+
+commit a4bfa78ec9de882f9b2d7a69f5e8fdcd58318dae
+Merge: 8fa6923 ca78af1
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Thu Feb 25 22:32:38 2021 -0600
+
+    resolve merge conflict
+
+commit 8fa69236c43bb1686e2c55e0bf37e9f0ad78d9d5
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Thu Feb 25 22:31:21 2021 -0600
+
+    add about page, create univeral css theme, create boilerplate to update navbar from, update index.html link
+
+commit ca78af1f6ecf3b98d8f8b5af8bc14b925867f7f8
+Author: Leif Thomas <leifkthomas@utexas.edu>
+Date:   Thu Feb 25 22:25:27 2021 -0600
+
+    fixed Music For You nav link to go to index
+
+commit 9ecc41a04a2c94eae683813355aabfae66a5d8e2
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Feb 25 22:09:32 2021 -0600
+
+    Fixed bug with broken url
+
+commit 8574ece2d2895d4a86a224aca51b64e048a6b70f
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Feb 25 22:01:26 2021 -0600
+
+    linked new pages, renamed splash to index
+
+commit 5441b2b775dc5fc8ef7825fd793396a3743cabbd
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Thu Feb 25 20:52:27 2021 -0600
+
+    changed artistPage styling and added table backgrounds, fixed some hyperlinks
+
+commit 3e24d77e3a1b244aa124e0f28ce8c53dc12f6b6b
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Thu Feb 25 20:14:27 2021 -0600
+
+    renamed models to songsTable and artistsTable.html
+
+commit 2a57e2fcd2d4d30f2c2348b8f56e3341f28ef96a
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Thu Feb 25 18:59:48 2021 -0600
+
+    created model page for artists
+
+commit f4718e691d66cfb15746dcbef9b194641b8c9fb1
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Thu Feb 25 18:45:29 2021 -0600
+
+    created songs model page with searchable table
+
+commit 84d8b6a92f20e07fb21283e178afba585b16d7c3
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Thu Feb 25 17:55:24 2021 -0600
+
+    added card pictures, polished resizability
+
+commit 4bcc66af8c143130057e2312af72fe07443cb42f
+Merge: aa36ae8 ba44712
+Author: Travis A <travis.aelvoet@gmail.com>
+Date:   Thu Feb 25 03:53:50 2021 +0000
+
+    Merge branch 'backend-Flask' into 'master'
+    
+    Backend flask
+    
+    See merge request perryascott2/cs331e-idb!3
+
+commit ba44712ca2ea782a0b517e6c26de3141cd9d8c76
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 24 21:44:53 2021 -0600
+
+    Removed addBand.html, updated artistPage.html img
+
+commit 5eb889c25719b57b101807f4fc32c320f1ef7b0a
+Merge: 0445020 aa36ae8
+Author: Travis A <travis.aelvoet@gmail.com>
+Date:   Thu Feb 25 02:38:46 2021 +0000
+
+    Merge branch 'master' into 'backend-Flask'
+    
+    # Conflicts:
+    #   main.py
+    #   static/data/data.json
+
+commit 044502073f25f9166575ff67a9a207a5781f3c7c
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 24 20:35:03 2021 -0600
+
+    fixing merge conflicts part 2
+
+commit 555ff1b83a1c3140fb08d981eea15767b2528278
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 24 20:34:18 2021 -0600
+
+    fixing merge conflicts part 1
+
+commit f5785358f4391d317a7037176f4ac12db7713e7c
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 24 20:22:01 2021 -0600
+
+    expanded data structure in preparation for html templates
+
+commit aa36ae8ebb2f884e697151b4cd0b7b24272acb0f
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Wed Feb 24 18:01:11 2021 -0600
+
+    cleaned up splash page, more merging issues
+
+commit bad4856ec3b6c6391f01a15103cccea2b951d3ec
+Merge: b69365d 5b96330
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Wed Feb 24 17:59:31 2021 -0600
+
+    Merge branch 'master' of https://gitlab.com/perryascott2/cs331e-idb into master
+
+commit b69365ddb95a8b1653d20331437906408412f63c
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Wed Feb 24 16:30:22 2021 -0600
+
+    fixed sizing and added cards to splash
+
+commit 5b9633053416858684a510827954c6abb2a9f8bb
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 24 16:10:24 2021 -0600
+
+    update to previous commit
+
+commit b7d3b088563437339557eca80699c673d7678f99
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 24 16:09:29 2021 -0600
+
+    Prepared genre and song routing
+
+commit bc4a9998a913618b74318de9e13f79524502c535
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 24 15:48:59 2021 -0600
+
+    Moved homePage.css to static folder
+
+commit 2828865ac39b1ce15ce42b37e38e277872ee390c
+Merge: 78eea9e f6d1374
+Author: Travis A <travis.aelvoet@gmail.com>
+Date:   Wed Feb 24 21:36:04 2021 +0000
+
+    Merge branch 'backend-Flask' into 'master'
+    
+    Moved data to json
+    
+    See merge request perryascott2/cs331e-idb!2
+
+commit 78eea9e935c9f50f78b4f4be0b2ed4bee3c77b56
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Wed Feb 24 15:30:00 2021 -0600
+
+    created splash page
+
+commit 6d22f172fd7ef6f385f997e544b1efbcaf0924a9
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Thu Feb 18 13:06:31 2021 -0600
+
+    Add app.yaml and requirements.txt
+
+commit f6d1374a725455ed3e409a533dfaddb17895363f
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 17 22:49:50 2021 -0600
+
+    Moved data to json
+
+commit 722a9554b4edba7ab1d5fdf909d7613a1114abb0
+Merge: f344ab5 57ccb08
+Author: Travis A <travis.aelvoet@gmail.com>
+Date:   Thu Feb 18 03:51:42 2021 +0000
+
+    Merge branch 'backend-Flask' into 'master'
+    
+    Backend flask
+    
+    See merge request perryascott2/cs331e-idb!1
+
+commit 57ccb0834422ac857408f2f52727a1c5a2c54f7e
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 17 21:50:13 2021 -0600
+
+    Folded artistpage template into Flask structure
+
+commit ffecbfca45fca6c3241d6f36f3a34e52582acc54
+Merge: 43f7e1f f344ab5
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Wed Feb 17 21:35:33 2021 -0600
+
+    Merge branch 'master' of https://gitlab.com/perryascott2/cs331e-idb into backend-Flask
+
+commit f344ab5421e98590868b7a1e968240383b76efdb
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Thu Feb 11 21:23:35 2021 -0600
+
+    slightly changed template, added a picture and folder for assets and pictures.
+
+commit c6268e3a20a9e305bfd92c82f912a87a8237adc5
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Thu Feb 11 21:09:50 2021 -0600
+
+    created very basic bootstrap template for artist page
+
+commit 43f7e1fa13242b92bc6220f6e0dfc751ed1bdfee
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Feb 11 19:05:26 2021 -0600
+
+    Add page routing examples
+
+commit 9cf926489c087151831796ba239b3c8f6d6bbb31
+Author: 60635199 <60635199+maxreader@users.noreply.github.com>
+Date:   Thu Feb 11 18:59:58 2021 -0600
+
+    Added main.py, example for page routing
+
+commit 9658e0421a6070490af912a76dfc5e31940c44f9
+Author: Leif Thomas <leifkthomas@utexas.edu>
+Date:   Thu Feb 11 11:41:02 2021 -0600
+
+    added gitignore file
+
+commit 2e30da562427e0f4aa0b7c1b7907e506ea2e16d3
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Thu Feb 11 17:31:42 2021 +0000
+
+    Initial commit
