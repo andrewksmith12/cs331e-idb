@@ -44,6 +44,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('albums')}}">Albums</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('genres')}}">Genres</a>
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
@@ -58,8 +61,10 @@
     <!-- Main Infobox -->
     <div class="row" id="infobox">
         <div class="col-md-6">
+			<div id = "mainDesc">
             <h1>Music For You<br><br><br></h1>
-            <p>Music For You is a platform that connects you to the most popular music, artists, and the venues they're performing at. </p>    
+            <p>Music For You is a platform that connects you to the most popular music, artists, and the venues they're performing at. </p> 
+			</div>
         </div>
         <div class="col-md-6">
             <!--carousel-->
@@ -86,16 +91,6 @@
                 </button>
             <br>
             </div>
-            <!--carousel end-->
-
-            <!-- location nav
-            <nav class="nav nav-pills nav-fill">
-                <a class="nav-link active" aria-current="page" href="#">location</a>
-                <a class="nav-link" href="#">Artist</a>
-                <a class="nav-link" href="#">Songs</a>
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Favorites</a>
-            </nav>
-			<!--location nav end -->
 
 
         </div>
@@ -124,13 +119,13 @@
                     <img src="../static/img/venues.jpg" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Albums</h5>
-                        <p class="card-text">Browse music albums from across the world!</p>
+                        <p class="card-text">Browse music albums from across the world!<br><br></p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
             </a>
         </div>
-
+	</div>
         <div class="row">
             <div class="col-md-1">
             </div>

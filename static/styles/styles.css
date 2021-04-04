@@ -19,7 +19,9 @@ p{
 body{
     background-color:#FFD9CE !important;
 }
-
+#mainDesc{
+	padding-left : 10%;
+}
 .bg-custom{
     background-color:#FFD9CE !important;
 }
