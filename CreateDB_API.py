@@ -2,7 +2,7 @@ import requests
 import json
 import os
 import subprocess 
-from models import db, Song, Artist, Album, Song_Album, Song_Artist
+from models import db, Song, Artist, Album, Song_Album, Song_Artist, Genre, Genre_Artist
 
 db.drop_all()
 db.create_all()
@@ -35,6 +35,7 @@ for song in data['tracks']['items']:
         if artist['id'] not in artistList:
             artistList.append(artist['id'])
 print(artistList)
+genresCreated = []
 artistsCreated = []
 albumsCreated = []
 songsCreated = []
@@ -47,6 +48,13 @@ for artist in artistList:
         newArtist = Artist(name=artistData['name'], id=artistData['id'], thumbnail=artistData['images'][0]['url'])
         artistsCreated.append(artist)
         db.session.add(newArtist)
+        for item in artistData['genres']:
+            if item not in genresCreated:
+                newGenre = Genre(name=item)
+                db.session.add(newGenre)
+                genresCreated.append(item)
+            dbGenre = db.session.query(Genre).filter(Genre.name==item).first()
+            Genre_Artist(artist_id=artist, genre_name=item, artist=newArtist, genre=dbGenre)
     else:
         newArtist = db.session.query(Artist).filter(Artist.id==artist).first()
     r = requests.get(BASE_URL + 'artists/' + artist + '/top-tracks', headers=auth_header, params={'market': 'US'})

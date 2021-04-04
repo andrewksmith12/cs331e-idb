@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, json
-from models import app, db, Artist, Song, Album, Song_Artist, Song_Album  # , Location
+from models import app, db, Artist, Song, Album, Song_Artist, Song_Album, Genre, Genre_Artist
 import random
 import os
 query = db.session.query
@@ -48,10 +48,17 @@ def albums():
     artist_list = query(Artist).all()
     return render_template('albumTable.html', locationIndex=locationIndex, song_list=song_list, album_list = album_list, artist_list = artist_list)
 
+@app.route('/search-by-genre', methods=['GET'])
+def genres():
+    genreList = query(Genre).all()
+    artistList = query(Artist).all()
+    return render_template('genresTable.html', genresList=genreList, artistList=artistList)
 
-"""@app.route('/search-by-location', methods=['GET'])
-def locations():
-    return render_template('locationsTable.html', locationIndex=locationIndex)"""
+@app.route('/genre/<string:name>', methods=['GET'])
+def genre(name):
+    genreList = query(Genre).filter(Genre.name==name).first()
+    artistList = query(Artist).all()
+    return render_template('genrePage.html', genreList=genreList, artistList=artistList)
 
 
 @app.route('/artist/<string:id>', methods=['GET'])
@@ -60,11 +67,6 @@ def artist(id):
     artistAlbums = query(Album).filter(Album.artistID== id).all()
     print(artistAlbums)
     return render_template('artistPage.html', artistData=artistData, artistAlbums=artistAlbums)
-
-
-"""@app.route('/location/<int:id>', methods=['GET'])
-def location(id):
-    return render_template('locationsPage.html', locationData=locationsData[id], locationIndex=locationIndex)"""
 
 
 @app.route('/album/<string:id>', methods=['GET'])
