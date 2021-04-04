@@ -1,3 +1,68 @@
+commit d13a6cbe0b836d71e56ef57e634b0152c4bb786f
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 21:41:26 2021 -0500
+
+    update to add ci link
+
+commit f058080cafef8024f68373a259574d14b871f53b
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 21:33:32 2021 -0500
+
+    Update api file
+
+commit 58dca56c0dbe2111baa3e286ea4cf676864c400d
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 21:25:35 2021 -0500
+
+    update genrespage/table
+
+commit ae3d3a8fe1f568949321611ef6bf9ce5827afd92
+Merge: 7c7a11d 298955d
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 21:24:30 2021 -0500
+
+    Merge branch 'master' of gitlab.com:perryascott2/cs331e-idb
+    merge
+
+commit 7c7a11d04199bd2541bf770d893eed326ffc9dce
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 21:24:23 2021 -0500
+
+    Commit Message
+
+commit 298955dfedf9d9258e23c661c111ee142ccaf0bf
+Merge: fef5761 fb1e8bc
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Sat Apr 3 21:10:09 2021 -0500
+
+    Merge branch 'master' of https://gitlab.com/perryascott2/cs331e-idb into master
+
+commit fef57612fbf6a545ab278445e106a2c3d51a7dd7
+Author: Perry Scott <perryascott2@gmail.com>
+Date:   Sat Apr 3 21:09:09 2021 -0500
+
+    css changes to index and added genres tab
+
+commit fb1e8bc1117a3017571b23980e2e80be215262c0
+Merge: c4db746 e051377
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 21:08:45 2021 -0500
+
+    Merge branch 'master' of gitlab.com:perryascott2/cs331e-idb
+    merge
+
+commit c4db7460813b6b59d70720aae0145d06d135ff93
+Author: Andrew Smith <andrew@andrewksmith.net>
+Date:   Sat Apr 3 21:08:38 2021 -0500
+
+    Add genres, update pages
+
+commit e051377d187f5ff00c2181a596fb4823dcb45be8
+Author: Leif <leifkthomas@utexas.edu>
+Date:   Sat Apr 3 20:09:48 2021 -0500
+
+    Added git log
+
 commit 53d26827b4fe71cda97bf7dd88b265b2b2dd0e6a
 Author: Leif <leifkthomas@utexas.edu>
 Date:   Sat Apr 3 20:05:29 2021 -0500
