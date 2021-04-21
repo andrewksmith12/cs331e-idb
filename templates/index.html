@@ -10,13 +10,18 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:ital@0;1&display=swap"
+        rel="stylesheet">
     <!-- Vendor CSS Files -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!-- Template Main CSS File -->
     <link href="../static/styles/styles.css" rel="stylesheet">
     <link href="../static/styles/homePage.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
 
 </head>
 
@@ -26,7 +31,9 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{url_for('index')}}">Music For You</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -48,9 +55,9 @@
                         <a class="nav-link" href="{{url_for('genres')}}">Genres</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" action="/search" method="POST">
+                    <input class="form-control me-2" name="searchTerm" type="text" placeholder="Search Music">
+                    <input type="submit" class="btn btn-outline-success">
                 </form>
             </div>
         </div>
@@ -61,10 +68,11 @@
     <!-- Main Infobox -->
     <div class="row" id="infobox">
         <div class="col-md-6">
-			<div id = "mainDesc">
-            <h1>Music For You<br><br><br></h1>
-            <p>Music For You is a platform that connects you to the most popular music, artists, and the venues they're performing at. </p> 
-			</div>
+            <div id="mainDesc">
+                <h1>Music For You<br><br><br></h1>
+                <p>Music For You is a platform that connects you to the most popular music, artists, and the venues
+                    they're performing at. </p>
+            </div>
         </div>
         <div class="col-md-6">
             <!--carousel-->
@@ -72,24 +80,29 @@
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="container"><img src="../static/img/brockhampton.jpg" class="d-block img-fluid" alt="artist1"></div>
+                        <div class="container"><img src="../static/img/brockhampton.jpg" class="d-block img-fluid"
+                                alt="artist1"></div>
                     </div>
                     <div class="carousel-item">
-                        <div class="container"><img src="../static/img/queen.jpg" class="d-block img-fluid" alt="artist2"></div>
+                        <div class="container"><img src="../static/img/queen.jpg" class="d-block img-fluid"
+                                alt="artist2"></div>
                     </div>
                     <div class="carousel-item">
-                        <div class="container"><img src="../static/img/ACDC.jpg" class="d-block img-fluid" alt="artist3"></div>
+                        <div class="container"><img src="../static/img/ACDC.jpg" class="d-block img-fluid"
+                                alt="artist3"></div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-            <br>
+                <br>
             </div>
 
 
@@ -107,7 +120,8 @@
                     <img src="../static/img/artists.jpeg" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Artists</h5>
-                        <p class="card-text">Search the Music For You database for the latest and greatest artists or search by older artists for the classics.</p>
+                        <p class="card-text">Search the Music For You database for the latest and greatest artists or
+                            search by older artists for the classics.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                 </div>
@@ -125,25 +139,25 @@
                 </div>
             </a>
         </div>
-	</div>
-        <div class="row">
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-5">
-                <a href="{{url_for('songs')}}">
-                    <div class="card mb-3">
-                        <img src="../static/img/songs.jpg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Songs</h5>
-                            <p class="card-text">Search the smallest music library publicly available through Music For You!
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                </a>
-            </div>
-                </div>
-                <div class="col-md-1">
-                </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
         </div>
+        <div class="col-md-5">
+            <a href="{{url_for('songs')}}">
+                <div class="card mb-3">
+                    <img src="../static/img/songs.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Songs</h5>
+                        <p class="card-text">Search the smallest music library publicly available through Music For You!
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+    </div>
     </div>
 
 </body>

@@ -11,13 +11,18 @@
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
     <!-- Vendor CSS Files -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!-- Template Main CSS File -->
     <link href="static/styles/homePage.css" rel="stylesheet">
     <link href="../static/styles/styles.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,7 +30,9 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{url_for('index')}}">Music For You</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -46,9 +53,9 @@
                         <a class="nav-link" href="{{url_for('genres')}}">Genres</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search Music" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" action="/search" method="POST">
+                    <input class="form-control me-2" name="searchTerm" type="text" placeholder="Search Music">
+                    <input type="submit" class="btn btn-outline-success">
                 </form>
             </div>
         </div>
@@ -56,38 +63,46 @@
     <!-- Navbar End -->
     <!-- Main Infobox -->
     <div class="row">
-	
-		<div class ="col-lg-1">
-		</div>
-		
+
+        <div class="col-lg-1">
+        </div>
+
         <div class="col-lg-7">
             <div class="card mb-3">
                 <img src="{{songID.thumbnail}}" class="img-fluid" alt="photo of {{songID.name}}">
                 <div class="card-body">
-                  <h3 class="card-title">{{songID.title}}</h3>
-                  <p class="font-italic">{{songID.description}}
-				  </p>
+                    <h3 class="card-title">{{songID.title}}</h3>
+                    <p class="font-italic">{{songID.description}}
+                    </p>
                     <p class="card-text"><small class="text-muted">
-						<ul>  <li>Album: <a href="{{url_for('album', id=albumID.id)}}">{{albumID.title}}</a></li><li>
-                            Artist: 
-                            <a href="{{url_for('artist', id=songID.artists[0].artist.id)}}">{{songID.artists[0].artist.name}}</a></li></ul></small></p>
+                            <ul>
+                                <li>Album: <a href="{{url_for('album', id=albumID.id)}}">{{albumID.title}}</a></li>
+                                <li>
+                                    Artist:
+                                    <a
+                                        href="{{url_for('artist', id=songID.artists[0].artist.id)}}">{{songID.artists[0].artist.name}}</a>
+                                </li>
+                            </ul>
+                        </small></p>
                 </div>
             </div>
         </div>
-        
+
         <div class="col-lg-3">
-		    <div class="card mb-3">
+            <div class="card mb-3">
                 <img src="../static/img/artists.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Related Music and Artists</h5>
-                    <p class="card-text"><ul> {% for item in songID.related %} <li>{{item}}</li> {% endfor %} </ul></p>
+                    <p class="card-text">
+                    <ul> {% for item in songID.related %} <li>{{item}}</li> {% endfor %} </ul>
+                    </p>
                 </div>
-            </div> 
+            </div>
         </div>
-		
-		<div class ="col-lg-1">
-		</div>
-		
+
+        <div class="col-lg-1">
+        </div>
+
     </div>
 </body>
 

@@ -54,6 +54,23 @@ def genres():
     artistList = query(Artist).all()
     return render_template('genresTable.html', genresList=genreList, artistList=artistList)
 
+@app.route('/search', methods=['POST'])
+def processSearch():
+    searchTerm = request.form.get('searchTerm')
+    songs = query(Song).filter(Song.title.like(searchTerm)).all()
+    albums = query(Album).filter(Album.title.like(searchTerm)).all()
+    artists = query(Artist).filter(Artist.name.like(searchTerm)).all()
+    genres = query(Genre).filter(Genre.name.like(searchTerm)).all()
+    return render_template('searchResults.html', searchTerm=searchTerm, songs=songs, albums=albums, artists=artists, genres=genres)
+
+@app.route('/search/<string:searchTerm>', methods=['GET'])
+def search(searchTerm):
+    songs = query(Song).filter(Song.title.like(searchTerm)).all()
+    albums = query(Album).filter(Album.title.like(searchTerm)).all()
+    artists = query(Artist).filter(Artist.name.like(searchTerm)).all()
+    genres = query(Genre).filter(Genre.name.like(searchTerm)).all()
+    return render_template('searchResults.html', searchTerm=searchTerm, songs=songs, albums=albums, artists=artists, genres=genres)
+
 @app.route('/genre/<string:name>', methods=['GET'])
 def genre(name):
     genreList = query(Genre).filter(Genre.name==name).first()

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Music For You - Genres</title>
+    <title>Music For You - Artists</title>
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -26,12 +26,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
         integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.js"></script>-->
     <script src="/static/sort.js"></script>
 </head>
 
 <body id="tableBody">
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
@@ -70,13 +69,129 @@
 
     <!-- Main Infobox -->
     <div class="row">
-        <br>
+
         <div class="col-md-2 col-md-0">
         </div>
         <div class="col-lg-8 col-md-12 bg-custom">
             <br>
-            <h3>Browse Genres</h3>
+            <h2>Search Results: {{searchTerm}}</h2>
+            <br>
+            <h3>Songs</h3>
             <!--table -->
+            <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">Song Name
+                        </th>
+                        <th class="th-sm">Album
+                        </th>
+                        <th class="th-sm">Artist
+                        </th>
+                        <th class="th-sm">Release Date
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for song in songs %}
+                    <tr>
+                        <td><a href="{{url_for('song', id = song.id)}}">{{song.title}} </a></td>
+                        <td><a
+                                href="{{url_for('album', id=song.albums[0].album.id)}}">{{song.albums[0].album.title}}</a>
+                        </td>
+                        <td><a
+                                href="{{url_for('artist', id=song.artists[0].artist.id)}}">{{song.artists[0].artist.name}}</a>
+                        </td>
+                        <td>{{song.release_date}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Song Name
+                        </th>
+                        <th>Album
+                        </th>
+                        <th>Artist
+                        </th>
+                        <th>Release Date
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+            <!--table end-->
+            <br>
+            <h3>Artists</h3>
+            <!--table -->
+            <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">Artist Name
+                        </th>
+                        <th class="th-sm">Top Song
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for artist in artists %}
+                    <tr>
+                        <td><a href="{{url_for('artist', id = artist.id)}}">{{artist.name}}</a></td>
+                        <td><a
+                                href="{{url_for('song', id = artist.songs[0].song.id)}}">{{artist.songs[0].song.title}}</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th class=>Artist Name
+                        </th>
+                        <th class=>Top Song
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+            <!--table end-->
+            <h3>Albums</h3>
+            <br>
+            <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">Album Name
+                        </th>
+                        <th class="th-sm">Artist
+                        </th>
+                        <th class="th-sm">Top Song
+                        </th>
+                        <th class="th-sm">Release Date
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for album in albums %}
+                    <tr>
+                        <td><a href="{{url_for('album',id=album.id)}}">{{album.title}}</a></td>
+                        <td><a href="{{url_for('artist',id=album.artist.id)}}">{{album.artist.name}}</a></td>
+                        <td><a href="{{url_for('song',id=album.songs[0].song.id)}}">{{album.songs[0].song.title}}</td>
+                        <td>{{album.songs[0].song.release_date}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th class="th-sm">Album Name
+                        </th>
+                        <th class="th-sm">Artist
+                        </th>
+                        <th class="th-sm">Top Song
+                        </th>
+                        <th class="th-sm">Release Date
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+            <!--Table End-->
+            <h3>Genres </h3>
+            <br>
             <table id="dtBasicExample" class="table table-bordered table-sm" cellspacing="0" width="100%">
                 <thead>
                     <tr>
@@ -87,7 +202,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for genre in genresList %}
+                    {% for genre in genres %}
                     <tr>
                         <td><a href="{{url_for('genre', name=genre.name)}}">{{genre.name}}</a></td>
                         <td>
@@ -108,15 +223,10 @@
                     </tr>
                 </tfoot>
             </table>
-            <br><br><br><br>
-            <!--table end-->
         </div>
         <div class="col-md-2 col-md-0">
         </div>
     </div>
-    </div>
-
-
 </body>
 
 </html>
