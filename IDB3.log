@@ -1,3 +1,9 @@
+commit 39ceac7d89664d76d2f35491824fec9e7f4633ef
+Author: Leif <leifkthomas@utexas.edu>
+Date:   Fri Apr 23 19:50:19 2021 -0500
+
+    added git log and makefile
+
 commit e8bc7a82b5e112af48a50f3d559738f43952b684
 Author: Leif <leifkthomas@utexas.edu>
 Date:   Fri Apr 23 19:33:51 2021 -0500
